@@ -45,8 +45,13 @@
     document.getElementById('p-artist').textContent = s.artist;
     player.style.setProperty('--c', s.color);
     tapes.forEach((t, j) => t.querySelector('.st').textContent = j === idx ? 'Now playing' : 'Select tape');
-    if (autoplay) audio.play().catch(() => {});
+    if (autoplay) { audio.play().catch(() => {}); showPlayer(); }
     sync();
+  }
+  // The player stays hidden until a tape is picked, then slides up and stays pinned to the bottom.
+  function showPlayer() {
+    player.classList.add('shown');
+    document.body.classList.add('has-player');
   }
   function sync() {
     const on = !audio.paused;
@@ -58,6 +63,7 @@
   grid.addEventListener('click', e => {
     const t = e.target.closest('.tape'); if (!t) return;
     const i = +t.dataset.i;
+    showPlayer();
     if (i === idx && audio.src) { audio.paused ? audio.play() : audio.pause(); }
     else load(i, true);
   });

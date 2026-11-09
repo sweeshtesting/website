@@ -218,14 +218,14 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 /* ============ Music ============ */
 .music-intro .h-page span { color: #ef826e; }
 .music-intro .art { left: calc(800 * var(--u) + var(--off)); top: calc(113 * var(--u)); width: calc(278 * var(--u)); animation: wobble 5s ease-in-out infinite; }
-.tapes-wall { position: relative; background: var(--paper); padding: calc(93 * var(--u)) calc(102 * var(--u) + var(--off)) calc(172 * var(--u)); overflow: hidden; }
+.tapes-wall { position: relative; background: var(--paper); padding: calc(93 * var(--u)) calc(102 * var(--u) + var(--off)) calc(120 * var(--u)); overflow: hidden; }
 .tapes-wall::before { content: ''; position: absolute; inset: 0; background: url('../img/music-notes-c.webp') repeat 0 0 / calc(642 * var(--u)) auto; opacity: .13; pointer-events: none; }
 .tapes-wall .grid { position: relative; display: grid; grid-template-columns: repeat(2, calc(499 * var(--u))); justify-content: space-between; row-gap: calc(80 * var(--u)); }
 .tape { position: relative; height: calc(365 * var(--u)); text-align: left; --c: #ef826e; }
 .tape .pin { position: absolute; left: 50%; top: calc(-22 * var(--u)); width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: var(--ink); box-shadow: 0 3px 5px rgba(27, 28, 25, .4); z-index: 2; }
 .tape .string { position: absolute; left: 50%; top: calc(-16 * var(--u)); width: calc(250 * var(--u)); height: calc(91 * var(--u)); transform: translateX(-50%); pointer-events: none; }
 .tape .string::before, .tape .string::after { content: ''; position: absolute; top: 0; width: 50%; height: 100%;
-  background: linear-gradient(to top right, transparent calc(50% - .5px), rgba(27, 28, 25, .3) 50%, transparent calc(50% + .5px)); }
+  background: linear-gradient(to bottom right, transparent calc(50% - .8px), rgba(27, 28, 25, .55) 50%, transparent calc(50% + .8px)); }
 .tape .string::before { left: 0; }
 .tape .string::after { right: 0; transform: scaleX(-1); }
 .tape .body { position: absolute; left: calc(54.5 * var(--u)); top: calc(75 * var(--u)); width: calc(390 * var(--u)); height: calc(230 * var(--u));
@@ -245,8 +245,12 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .tape .meta { position: absolute; left: calc(15 * var(--u)); top: calc(353 * var(--u)); font-family: var(--mono); font-size: 8px; letter-spacing: 1.28px; text-transform: uppercase; }
 .tape.playing .meta { color: #ec7049; font-weight: 500; }
 
-.player { position: relative; z-index: 5; margin: calc(-118 * var(--u)) calc(51 * var(--u) + var(--off)) calc(38 * var(--u)); height: 100px; background: var(--cream); border: 1px solid var(--ink); box-shadow: 7px 7px 0 var(--ink);
+/* Hidden until a tape is picked, then pinned to the bottom of the screen. */
+.player { position: fixed; z-index: 60; left: calc(51 * var(--u) + var(--off)); right: calc(51 * var(--u) + var(--off)); bottom: 20px; margin: 0;
+  transform: translateY(calc(100% + 40px)); opacity: 0; pointer-events: none; transition: transform .45s cubic-bezier(.2, .9, .3, 1.15), opacity .3s;  height: 100px; background: var(--cream); border: 1px solid var(--ink); box-shadow: 7px 7px 0 var(--ink);
   display: grid; grid-template-columns: 70px minmax(0, 1fr) auto minmax(0, 1.2fr); align-items: center; gap: 16px; padding: 0 23px; }
+.player.shown { transform: none; opacity: 1; pointer-events: auto; }
+body.has-player .site-footer { padding-bottom: 150px; }
 .player .cover { width: 70px; height: 70px; border: 1px solid var(--ink); background: var(--c, #ef826e); display: grid; place-items: center; transition: background .3s; }
 .player .cover span { width: 34px; height: 34px; border-radius: 50%; border: 6px dashed var(--cream); }
 .player.playing .cover span { animation: spin 1.6s linear infinite; }
@@ -532,14 +536,14 @@ body.dark-page { background: #10172f; }
   .letter-card .thumb img.landscape { width: calc(min(340px, 86vw) * 1.414); height: min(340px, 86vw); }
   .letter-card h3 { font-size: 18px; line-height: 40px; }
 
-  .tapes-wall { padding: 60px 16px 200px; }
+  .tapes-wall { padding: 60px 16px 60px; }
   .tapes-wall .grid { grid-template-columns: 1fr; justify-items: center; row-gap: 40px; }
   .tape { width: 340px; height: 330px; transform: scale(.92); }
   .tape .body { left: 0; width: 340px; padding: 20px; }
   .tape .name { font-size: 20px; }
   .tape .mood { font-size: 8px; }
   .tape .artist { font-size: 10px; }
-  .player { margin: -150px 10px 0; grid-template-columns: 50px minmax(0, 1fr) auto; height: auto; padding: 12px; gap: 10px; box-shadow: 4px 4px 0 var(--ink); }
+  .player { left: 10px; right: 10px; bottom: 10px; grid-template-columns: 50px minmax(0, 1fr) auto; height: auto; padding: 12px; gap: 10px; box-shadow: 4px 4px 0 var(--ink); }
   .player .cover { width: 50px; height: 50px; }
   .player .title { font-size: 16px; line-height: 22px; }
   .player .seek { grid-column: 1 / -1; }
@@ -591,6 +595,4 @@ body.dark-page { background: #10172f; }
   .book .page { padding: 32px 22px 48px; }
   .viewer .close { right: 16px; top: 12px; font-size: 36px; }
   .ao3-intro .art { position: relative; right: auto; top: auto; display: block; width: 160px; margin: 24px auto 0; }
-  /* On phones the player stays pinned to the bottom of the screen while you scroll the tapes. */
-  .player { position: sticky; bottom: 8px; margin: -150px 8px 8px; }
 }
