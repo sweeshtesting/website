@@ -333,8 +333,9 @@ body.dark-page { background: #10172f; }
   font-family: var(--pixel); font-size: 12px; letter-spacing: 1.4px; text-transform: uppercase; transition: background .2s; }
 .back-gacha:hover { background: rgba(225, 186, 96, .25); }
 
-.inv-head { display: flex; align-items: center; justify-content: space-between; padding: calc(75 * var(--u)) calc(74 * var(--u)) 0 calc(190 * var(--u)); }
-.inv-head .view-title { padding: 0; flex: 1; text-align: center; }
+/* Title centered on the page; tabs pinned to the right. */
+.inv-head { position: relative; display: flex; align-items: center; justify-content: flex-end; min-height: 40px; margin-top: calc(75 * var(--u)); padding: 0 calc(74 * var(--u) + var(--off)); }
+.inv-head .view-title { position: absolute; left: 0; right: 0; padding: 0; text-align: center; pointer-events: none; }
 .tabs { display: flex; gap: 20px; }
 .tabs button { height: 35px; padding: 0 18px; border-radius: 20px; background: rgba(0, 0, 0, .36); font-family: var(--pixel); font-size: 12px; letter-spacing: 4px; color: #fff; text-transform: uppercase; transition: background .2s; }
 .tabs button[aria-pressed="true"] { background: #e1ba60; color: #10172f; }
@@ -573,7 +574,8 @@ body.dark-page { background: #10172f; }
   .card { width: 140px; height: 110px; }
   .card .star { font-size: 44px; }
   .view-title { font-size: 26px; padding-top: 32px; }
-  .inv-head { flex-direction: column; gap: 16px; padding: 32px 16px 0; }
+  .inv-head { flex-direction: column; justify-content: center; gap: 16px; margin-top: 32px; padding: 0 16px; }
+  .inv-head .view-title { position: static; }
   .tabs { gap: 8px; }
   .tabs button { font-size: 10px; letter-spacing: 2px; padding: 0 12px; }
   .inv-grid { grid-template-columns: repeat(2, 140px); gap: 16px; }
