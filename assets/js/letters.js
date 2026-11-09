@@ -18,12 +18,12 @@
   const [front, back] = flip.querySelectorAll('img');
   let current = null;
 
-  // Sized with CSS units so it always fills the screen, even if the window changes size.
+  // Shown wide enough to read comfortably (close to the scan's real size). Taller letters scroll inside the viewer.
   function size() {
     if (!current) return;
     const ratio = current.landscape ? 1754 / 1241 : 1241 / 1754;
     flip.style.aspectRatio = String(ratio);
-    flip.style.width = `min(94vw, calc((100vh - 140px) * ${ratio}))`;
+    flip.style.width = current.landscape ? 'min(94vw, 1500px)' : 'min(94vw, 1050px)';
     flip.style.height = 'auto';
   }
   function open(i) {
@@ -34,8 +34,9 @@
     flip.classList.remove('flipped');
     size();
     viewer.classList.add('open');
+    viewer.scrollTop = 0;
     document.body.style.overflow = 'hidden';
-    flip.focus();
+    flip.focus({ preventScroll: true });
   }
   function close() {
     viewer.classList.remove('open');

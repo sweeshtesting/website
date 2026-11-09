@@ -198,14 +198,14 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .letter-card h3 { font-family: var(--pixel); font-weight: 400; font-size: calc(24 * var(--u)); letter-spacing: calc(2 * var(--u)); line-height: calc(72 * var(--u)); text-transform: uppercase; margin: 0; }
 
 /* Shared full-screen viewer (letters + fanfics) */
-.viewer { position: fixed; inset: 0; z-index: 100; background: rgba(20, 20, 18, .72); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
-  opacity: 0; pointer-events: none; transition: opacity .3s ease; padding: 16px; }
+.viewer { position: fixed; inset: 0; z-index: 100; background: rgba(20, 20, 18, .72); display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 18px;
+  opacity: 0; pointer-events: none; transition: opacity .3s ease; padding: 70px 16px 100px; overflow-y: auto; overscroll-behavior: contain; }
 .viewer.open { opacity: 1; pointer-events: auto; }
-.viewer .close { position: absolute; top: 24px; right: 32px; font-family: var(--pixel); font-size: 48px; line-height: 1; color: #fff; z-index: 3; transition: transform .2s; }
+.viewer .close { position: fixed; top: 24px; right: 32px; font-family: var(--pixel); font-size: 48px; line-height: 1; color: #fff; z-index: 3; transition: transform .2s; }
 .viewer .close:hover { transform: rotate(90deg) scale(1.1); }
-.viewer .hint { font-family: var(--pixel); color: #fff; font-size: clamp(22px, calc(48 * var(--u)), 48px); letter-spacing: 2px; text-transform: uppercase; animation: pulse 1.6s ease-in-out infinite; }
+.viewer .hint { position: fixed; bottom: 24px; left: 0; right: 0; text-align: center; pointer-events: none; z-index: 3; text-shadow: 0 2px 8px rgba(0, 0, 0, .8); font-family: var(--pixel); color: #fff; font-size: clamp(22px, calc(48 * var(--u)), 48px); letter-spacing: 2px; text-transform: uppercase; animation: pulse 1.6s ease-in-out infinite; }
 @keyframes pulse { 50% { opacity: .55; } }
-.flip-card { flex: none; perspective: 2200px; cursor: pointer; transform: scale(.92); transition: transform .35s ease; }
+.flip-card { flex: none; margin-block: auto; perspective: 2200px; cursor: pointer; transform: scale(.92); transition: transform .35s ease; }
 .viewer.open .flip-card { transform: scale(1); }
 .flip-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .8s cubic-bezier(.3, .7, .2, 1); }
 .flip-card.flipped .flip-inner { transform: rotateY(180deg); }
