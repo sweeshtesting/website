@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/img/flower-c.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Music · Our Cozy Corner</title>
+</head>
+<body data-page="music">
+<header class="site-header" data-header></header>
+<main>
+  <section class="intro music-intro">
+    <p class="label">Music player</p>
+    <h1 class="h-page">These are some songs I dedicate to <span>you!</span></h1>
+    <p class="body-text">These songs make me think about you. I want you to also hear them so you know I think about you.</p>
+    <img class="art" src="assets/img/cassettes-music-c.webp" alt="">
+  </section>
+  <section class="tapes-wall">
+    <div class="grid" id="tapes"></div>
+  </section>
+  <div class="player" id="player">
+    <div class="cover"><span></span></div>
+    <div>
+      <div class="now">NOW PLAYING</div>
+      <div class="title" id="p-title"></div>
+      <div class="artist" id="p-artist"></div>
+    </div>
+    <div class="controls">
+      <button class="skip" id="p-prev" aria-label="Previous song">←</button>
+      <button class="play-btn" id="p-play" aria-label="Play"></button>
+      <button class="skip" id="p-next" aria-label="Next song">→</button>
+    </div>
+    <div class="seek" id="p-seek" role="slider" aria-label="Song position" tabindex="0">
+      <div class="track"></div><div class="fill"></div><span class="t0">0:00</span><span class="t1">0:00</span>
+    </div>
+  </div>
+</main>
+<footer class="site-footer" data-footer></footer>
+<audio id="audio" preload="metadata"></audio>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/music.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/img/flower-c.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Letters · Our Cozy Corner</title>
+</head>
+<body data-page="letters">
+<header class="site-header" data-header></header>
+<main>
+  <section class="intro letters-intro">
+    <p class="label">Busy writing another one...</p>
+    <h1 class="h-page">All the letters<br>I have written<br>for <span>you!</span></h1>
+    <p class="body-text">I wanted a place where you can see all the letters I have written! So, if anything ever happens to the original, you will always know what I wrote for you.</p>
+    <img class="art" src="assets/img/envelope-c.webp" alt="">
+  </section>
+  <section class="letters-grid">
+    <div class="grid" id="letters"></div>
+  </section>
+</main>
+<footer class="site-footer" data-footer></footer>
+
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Letter">
+  <button class="close" aria-label="Close">X</button>
+  <div class="flip-card" id="flip" tabindex="0" role="button" aria-label="Flip the letter">
+    <div class="flip-inner">
+      <div class="face front"><img alt=""></div>
+      <div class="face back"><img alt=""></div>
+    </div>
+  </div>
+  <div class="hint">Click to flip!</div>
+</div>
+
+<script src="assets/js/core.js"></script>
+<script src="assets/js/letters.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Cozy Corner</title>
+<link rel="icon" href="assets/img/flower-c.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="checkin">
+<main class="checkin">
+  <div class="title-wrap">
+    <img class="fl1" src="assets/img/flower-c.webp" alt="">
+    <h1>Slow down!</h1>
+    <img class="fl2" src="assets/img/flower-c.webp" alt="">
+  </div>
+  <p>You need a passcode in order to enter!</p>
+  <form class="code-boxes" autocomplete="off">
+    <label class="sr-only" for="d0">Passcode</label>
+    <input id="d0" inputmode="numeric" maxlength="1" aria-label="Digit 1">
+    <input inputmode="numeric" maxlength="1" aria-label="Digit 2">
+    <input inputmode="numeric" maxlength="1" aria-label="Digit 3">
+    <input inputmode="numeric" maxlength="1" aria-label="Digit 4">
+    <input inputmode="numeric" maxlength="1" aria-label="Digit 5">
+    <input inputmode="numeric" maxlength="1" aria-label="Digit 6">
+  </form>
+  <p class="code-msg" role="status"></p>
+  <img class="meadow" src="assets/img/meadow-c.webp" alt="">
+</main>
+<script src="assets/js/core.js"></script>
+<script>
+(function () {
+  const form = document.querySelector('.code-boxes');
+  const boxes = [...form.querySelectorAll('input')];
+  const msg = document.querySelector('.code-msg');
+  const saved = Cozy.code();
+  if (saved) Cozy.checkCode(saved).then(ok => { if (ok) location.replace('home.html'); });
+  boxes[0].focus();
+
+  async function tryCode() {
+    const code = boxes.map(b => b.value).join('');
+    if (code.length < 6) return;
+    if (await Cozy.checkCode(code)) {
+      form.classList.add('ok'); msg.style.color = '#4f8f4b'; msg.textContent = 'Welcome in ✿';
+      Cozy.login(code);
+      setTimeout(() => location.href = 'home.html', 700);
+    } else {
+      form.classList.remove('shake'); void form.offsetWidth; form.classList.add('shake');
+      msg.textContent = 'Hmm, that’s not it. Try again!';
+      setTimeout(() => { boxes.forEach(b => b.value = ''); boxes[0].focus(); }, 450);
+    }
+  }
+  boxes.forEach((box, i) => {
+    box.addEventListener('input', () => {
+      box.value = box.value.replace(/\D/g, '').slice(-1);
+      msg.textContent = '';
+      if (box.value && i < 5) boxes[i + 1].focus();
+      tryCode();
+    });
+    box.addEventListener('keydown', e => {
+      if (e.key === 'Backspace' && !box.value && i > 0) { boxes[i - 1].focus(); boxes[i - 1].value = ''; }
+      if (e.key === 'ArrowLeft' && i > 0) boxes[i - 1].focus();
+      if (e.key === 'ArrowRight' && i < 5) boxes[i + 1].focus();
+    });
+    box.addEventListener('paste', e => {
+      const digits = (e.clipboardData.getData('text') || '').replace(/\D/g, '').slice(0, 6);
+      if (!digits) return;
+      e.preventDefault();
+      digits.split('').forEach((d, j) => { if (boxes[j]) boxes[j].value = d; });
+      boxes[Math.min(digits.length, 5)].focus();
+      tryCode();
+    });
+  });
+  form.addEventListener('submit', e => { e.preventDefault(); tryCode(); });
+})();
+</script>
+</body>
+</html>

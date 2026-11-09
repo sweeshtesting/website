@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/img/flower-c.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Gaccha · Our Cozy Corner</title>
+</head>
+<body data-page="gacha" class="dark-page">
+<header class="site-header dark" data-header></header>
+<main class="gacha">
+  <div class="stars" aria-hidden="true"></div>
+
+  <section class="view banner" id="v-banner">
+    <div class="currency">
+      <span class="pill"><img src="assets/img/ticket-a.webp" alt="">∞</span>
+      <span class="pill"><img src="assets/img/ticket-b.png" alt="">∞</span>
+    </div>
+    <div class="banner-card">
+      <span class="tab" aria-hidden="true"></span>
+      <div class="kicker">permanent warp</div>
+      <div class="five">✦ ✦ ✦ ✦ ✦</div>
+      <h1>THE COMPLIMENT GACCHA!</h1>
+      <hr>
+      <p>This is an excuse for me to shower you with all the compliments I have wanted to. But, let’s make it a bit more fun by having you gamble for it.</p>
+      <p>There are around 50 normal ones and a few 5 star voice notes hidden in this one! I wonder if you can get them all.</p>
+      <p>Oh and.... don’t lose the 50/50 :P</p>
+    </div>
+    <div class="warp-row">
+      <button class="warp-btn" id="warp1"><img src="assets/img/ticket-a.webp" alt=""><span class="n">x1</span><span class="sep"></span><span class="w">Warp x1</span></button>
+      <button class="warp-btn" id="warp10"><img src="assets/img/ticket-b.png" alt=""><span class="n">x10</span><span class="sep"></span><span class="w">Warp x10</span></button>
+    </div>
+    <button class="arrow-btn next" id="to-inventory" aria-label="Open inventory">›</button>
+  </section>
+
+  <section class="view" id="v-rewards">
+    <h1 class="view-title">Click to see rewards</h1>
+    <div class="reward-grid" id="reward-grid"></div>
+    <button class="back-gacha" id="back-gacha">Back to gaccha</button>
+  </section>
+
+  <section class="view inventory" id="v-inventory">
+    <button class="arrow-btn prev inv-back" id="to-banner" aria-label="Back to banner">‹</button>
+    <div class="inv-head">
+      <h1 class="view-title">Inventory</h1>
+      <div class="tabs">
+        <button data-t="3" aria-pressed="true">3 star</button>
+        <button data-t="4" aria-pressed="false">4 star</button>
+        <button data-t="5" aria-pressed="false">5 star</button>
+      </div>
+    </div>
+    <div class="inv-grid" id="inv-grid"></div>
+    <div class="inv-pager"><button id="inv-prev" aria-label="Previous page">‹</button><span id="inv-page">1 / 1</span><button id="inv-next" aria-label="Next page">›</button></div>
+    <p class="inv-stats" id="inv-stats"></p>
+  </section>
+</main>
+
+<div class="note-modal" id="note-modal" role="dialog" aria-modal="true" aria-label="Reward">
+  <button class="close" id="note-close" aria-label="Close">×</button>
+  <button class="arrow-btn prev" id="note-prev" aria-label="Previous">‹</button>
+  <div class="note-paper" id="note-paper"></div>
+  <button class="arrow-btn next" id="note-next" aria-label="Next">›</button>
+  <div class="counter" id="note-counter">1/1</div>
+</div>
+
+<footer class="site-footer short" data-footer data-no-top data-text="THAT’S ALL FOR NOW!"></footer>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/gacha-data.js"></script>
+<script src="assets/js/gacha.js"></script>
+</body>
+</html>

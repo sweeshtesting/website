@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/img/flower-c.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Fanfics · Our Cozy Corner</title>
+</head>
+<body data-page="fanfics">
+<header class="site-header red" data-header></header>
+<main>
+  <section class="ao3-intro">
+    <div class="brand">
+      <img src="assets/img/ao3-logo.webp" alt="">
+      <h1>ARCHIVE OF OUR OWN<small>TEMU EDITION</small></h1>
+    </div>
+    <p class="body-text">These are some tough times! Wild to think it is down for almost an entire month? Well, I tried to help you out in a few small ways! I tried to look for fanfics which you might like reading and collected them here for you.
+
+Are they any good? I am not really sure but I hope they are. This is very hit or miss but I did want to help you out in small ways &lt;3</p>
+    <img class="art" src="assets/img/books.webp" alt="">
+  </section>
+  <section class="works">
+    <div class="works-head"><h2>Works in this collection</h2><span id="works-count"></span></div>
+    <div id="works"></div>
+  </section>
+</main>
+
+<div class="viewer" id="reader" role="dialog" aria-modal="true" aria-label="Fanfic reader">
+  <button class="close" aria-label="Close">×</button>
+  <div class="book" id="book"></div>
+  <div class="book-nav">
+    <button class="arrow-btn" id="pg-prev" aria-label="Previous page">‹</button>
+    <span id="pg-count">1 / 1</span>
+    <button class="arrow-btn" id="pg-next" aria-label="Next page">›</button>
+  </div>
+</div>
+
+<footer class="site-footer" data-footer="star"></footer>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/fanfic-data.js"></script>
+<script src="assets/js/fanfics.js"></script>
+</body>
+</html>
