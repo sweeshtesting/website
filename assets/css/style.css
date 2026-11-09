@@ -298,12 +298,13 @@ body.dark-page { background: #10172f; }
 .currency .pill { position: relative; width: 157px; height: 35px; border-radius: 20px; background: rgba(0, 0, 0, .36); display: flex; align-items: center; justify-content: flex-end; padding-right: 40px;
   font-family: var(--pixel); font-size: 32px; color: #fff; }
 .currency .pill img { position: absolute; left: 0; top: -17px; width: 64px; transform: scaleX(-1); }
+.currency .pill.crystal img { width: 52px; left: 6px; top: -12px; transform: none; filter: drop-shadow(0 0 6px rgba(140, 200, 255, .6)); }
 .arrow-btn { position: absolute; width: 46px; height: 80px; background: rgba(16, 23, 47, .5); border: 1px solid #e1ba60; color: var(--cream); font-family: var(--mono); font-size: 35px; line-height: 1;
   display: grid; place-items: center; transition: background .2s, transform .2s; z-index: 4; }
 .arrow-btn:hover { background: rgba(225, 186, 96, .25); }
 .arrow-btn[disabled] { opacity: .3; cursor: default; }
 /* Pixel cat from the Figma banner, sitting on the bottom edge. */
-.pixel-cat { position: absolute; left: calc(699 * var(--u) + var(--off)); bottom: 0; width: calc(533 * var(--u)); image-rendering: pixelated; pointer-events: none; z-index: 1; animation: catbob 3.2s steps(2, end) infinite; }
+.pixel-cat { position: absolute; left: calc(699 * var(--vw)); bottom: 0; width: min(calc(533 * var(--vw)), calc(831 * var(--u))); image-rendering: pixelated; pointer-events: none; z-index: 1; animation: catbob 3.2s steps(2, end) infinite; }
 @keyframes catbob { 50% { transform: translateY(calc(-4 * var(--u))); } }
 .banner .next { right: calc(74 * var(--u)); top: calc(334 * var(--u)); }
 
