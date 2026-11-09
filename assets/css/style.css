@@ -123,7 +123,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .postbox .copy .body-text { width: calc(423 * var(--u)); margin-top: calc(35 * var(--u)); }
 .postbox .copy .btn { background: var(--pink); margin-top: calc(30 * var(--u)); }
 .postbox .envelope { left: calc(627 * var(--u) + var(--off)); top: calc(291 * var(--u)); width: calc(533 * var(--u)); z-index: 2; animation: float 6s ease-in-out infinite; }
-.postbox-img { position: absolute; left: calc(879 * var(--u) + var(--off)); top: calc(871 * var(--u)); width: calc(357 * var(--u)); z-index: 3; pointer-events: none; }
+/* Sits 38 design px above the bottom of the hero, so it follows the hero height on any screen. */
+.postbox-img { position: absolute; left: calc(879 * var(--u) + var(--off)); top: calc(288 * var(--u) + 583 * var(--vw)); width: calc(357 * var(--u)); z-index: 3; pointer-events: none; }
 @keyframes float { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-10px) rotate(-2deg); } }
 
 .music-sec { height: calc(790 * var(--u)); background: #945dd4; color: var(--cream); }
