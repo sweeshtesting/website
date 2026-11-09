@@ -18,14 +18,13 @@
   const [front, back] = flip.querySelectorAll('img');
   let current = null;
 
+  // Sized with CSS units so it always fills the screen, even if the window changes size.
   function size() {
     if (!current) return;
     const ratio = current.landscape ? 1754 / 1241 : 1241 / 1754;
-    const maxW = Math.min(window.innerWidth * 0.92, current.landscape ? 1000 : 640);
-    const maxH = window.innerHeight - 170;
-    let w = maxW, h = w / ratio;
-    if (h > maxH) { h = maxH; w = h * ratio; }
-    flip.style.width = w + 'px'; flip.style.height = h + 'px';
+    flip.style.aspectRatio = String(ratio);
+    flip.style.width = `min(94vw, calc((100vh - 140px) * ${ratio}))`;
+    flip.style.height = 'auto';
   }
   function open(i) {
     current = LETTERS[i];

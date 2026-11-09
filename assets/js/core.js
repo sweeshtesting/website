@@ -52,10 +52,17 @@
   }
 
   // Scale the 1280px-wide design to fill the window (the CSS switches to a phone layout at 820px and below).
+  // Largest zoom of the 1280px design. Raise it to make wide screens look bigger, lower it for smaller.
+  const MAX_SCALE = 1.1;
   function fitDesign() {
     const w = document.documentElement.clientWidth;
-    if (w > 820) document.documentElement.style.setProperty('--u', Math.max(0.62, w / 1280) + 'px');
-    else document.documentElement.style.removeProperty('--u');
+    const st = document.documentElement.style;
+    if (w > 820) {
+      const u = Math.min(MAX_SCALE, Math.max(0.62, w / 1280));
+      st.setProperty('--u', u + 'px');
+      st.setProperty('--off', Math.max(0, (w - 1280 * u) / 2) + 'px');
+      st.setProperty('--vw', w / 1280 + 'px');
+    } else ['--u', '--off', '--vw'].forEach(k => st.removeProperty(k));
   }
   fitDesign();
   window.addEventListener('resize', fitDesign);
