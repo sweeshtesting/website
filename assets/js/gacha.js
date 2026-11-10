@@ -106,7 +106,7 @@
     const slice = list.slice(page * PER_PAGE, (page + 1) * PER_PAGE);
     $('#inv-grid').innerHTML = slice.map(it => {
       const have = it.tomato ? state.tomatoes : state.owned[it.id];
-      const name = it.tomato ? `Tomato ×${state.tomatoes}` : have ? (it.rarity === 5 ? `Voice note #${it.n}` : `Note #${it.n}`) : 'Not unlocked';
+      const name = it.tomato ? `Tomato x${state.tomatoes}` : have ? `${it.rarity === 5 ? 'Voice note' : 'Note'} #${it.n} x${have}` : 'Not unlocked';
       return `<div class="inv-cell"><button class="card r${it.rarity}${have ? '' : ' locked'}" data-id="${it.id}" ${have ? '' : 'disabled'} aria-label="${name}"><span class="star">${star}</span></button><span class="cell-label">${name}</span></div>`;
     }).join('');
     $('#inv-page').textContent = `${page + 1} / ${pages}`;
@@ -161,13 +161,26 @@
         </div>`;
       setupVoice(v);
     } else {
-      const long = it.text.length > 70;
-      paper.innerHTML = `<div class="stars">${stars}</div><div class="quote${long ? ' small' : ''}">“${esc(it.text)}”</div>`;
+      // Long notes use the easier-to-read body font; fitText() then sizes it to the card.
+      const long = it.text.length > 120;
+      paper.innerHTML = `<div class="stars">${stars}</div><div class="quote${long ? ' long' : ''}">“${esc(it.text)}”</div>`;
     }
+    const count = it.tomato ? state.tomatoes : state.owned[it.id] || 0;
+    if (count) paper.insertAdjacentHTML('beforeend', `<span class="qty">x${count}</span>`);
+    fitText();
     counter.textContent = `${at + 1}/${notes.length}`;
     $('#note-prev').disabled = at === 0;
     $('#note-next').disabled = at === notes.length - 1;
   }
+  // Biggest font size (in whole px) at which the note still fits on screen without scrolling.
+  function fitText() {
+    const q = paper.querySelector('.quote'); if (!q) return;
+    const big = q.classList.contains('long') ? 26 : 48, small = q.classList.contains('long') ? 16 : 20;
+    let size = window.innerWidth < 600 ? Math.round(big * .75) : big;
+    q.style.fontSize = size + 'px';
+    while (size > small && paper.scrollHeight > paper.clientHeight + 1) { size--; q.style.fontSize = size + 'px'; }
+  }
+  window.addEventListener('resize', () => { if (modal.classList.contains('open')) fitText(); });
   const fmt = s => isFinite(s) ? `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}` : '0:00';
   function setupVoice(v) {
     const btn = paper.querySelector('.play-btn'), seek = paper.querySelector('.seek'), fill = seek.querySelector('.fill');

@@ -357,8 +357,10 @@ body.dark-page { background: #10172f; }
 @keyframes pop { from { transform: scale(.85) rotate(-2deg); opacity: 0; } }
 .note-paper .stars { font-family: var(--mono); font-size: 24px; letter-spacing: 2px; color: var(--ink); }
 .note-paper.r5 .stars { color: #e1ba60; }
-.note-paper .quote { font-family: var(--pixel); font-size: clamp(28px, 4vw, 48px); line-height: 1.15; margin: auto 0; max-width: 400px; }
-.note-paper .quote.small { font-size: clamp(20px, 3vw, 30px); }
+.note-paper .quote { font-family: var(--pixel); font-size: 40px; line-height: 1.2; margin: auto 0; max-width: 480px; }
+.note-paper .quote.long { font-family: var(--mc); line-height: 1.55; max-width: 540px; text-align: left; }
+.note-paper { max-height: calc(100vh - 170px); overflow-y: auto; }
+.note-paper .qty { position: absolute; top: 18px; right: 22px; font-family: var(--pixel); font-size: 16px; letter-spacing: 1px; color: var(--ink); opacity: .6; }
 .note-paper .tomato { width: 280px; max-width: 70%; margin: 30px auto 10px; animation: bounce 1.2s ease-in-out infinite; }
 @keyframes bounce { 50% { transform: translateY(-10px) rotate(4deg); } }
 .note-paper .transcript { font-family: var(--mc); font-size: 16px; line-height: 24px; max-width: 548px; margin: 30px 0; color: var(--ink); }
