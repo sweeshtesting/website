@@ -87,5 +87,23 @@ window.FANFICS = [
     about: 'When Iida got out of bed to give a piece of his mind to whoever was disturbing the curfew, he was not expecting to be fine with it afterwards.\n\nTold from Iida’s point of view, this is a cozy late-night story in the dorms: midnight coffee, a round of Talking Tom Hero Dash, and some late-night conversations with Midoriya, Shinsou, Bakugou and a very sunny Eri. Expect hugs for both Eri and Izuku, and fluff in more ways than one (Izuku’s hair included).\n\nPure domestic, tooth-rotting fluff without plot. A one-shot of about 2,350 words, and part 1 of the series “All For Oneshots”.',
     words: '2,348', chapters: '1/1', kudos: '16',
     url: 'https://squidgeworld.org/works/79139'
+  },
+  {
+    title: 'Put Your Headphones Down',
+    author: 'allywritesforfun',
+    fandom: 'Haikyuu!!',
+    rating: 'G',
+    category: 'M/M',
+    warning: 'chose',
+    complete: true,
+    tags: ['Creator Chose Not To Use Archive Warnings', 'Iwaizumi Hajime/Oikawa Tooru', 'Iwaizumi Hajime', 'Oikawa Tooru', 'Canon Universe', 'Established Relationships', 'Fluff', 'Future Athletic Trainer Iwaizumi Hajime', 'Soft Boys Being Soft', 'god they’re so in love'],
+    summary: 'Oikawa stays up late rewatching Karasuno’s match, and Iwaizumi catches him red-handed.',
+    about: 'Set during season 1, episode 19, Oikawa stays up far too late watching the recording of Karasuno’s match, over and over, headphones on. Iwaizumi catches him red-handed.
+
+“You don’t have to come here and take care of me. I’ll be fine,” Oikawa insists. Iwaizumi isn’t buying it: red, strained eyes, hair a mess from the headphones, and a boy who has only been hurting himself over that screen. (“Mean, Iwa-chan! Mean!”)
+
+A canon-universe IwaOi story about an established couple, with a future athletic trainer Iwaizumi looking after his boyfriend. Soft boys being soft, and god, they’re so in love. A short one-shot of about 1,800 words, and part 4 of the series “and they were captains”.',
+    words: '1,831', chapters: '1/1', kudos: '20',
+    url: 'https://squidgeworld.org/works/48493'
   }
 ];
