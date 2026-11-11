@@ -19,7 +19,7 @@ A small birthday website. It is plain HTML, CSS and JavaScript, so there is no b
 - **Passcodes**: `assets/js/core.js` keeps SHA-256 hashes of the allowed codes (000000 for testing, 121105). To add a code, run `echo -n 123456 | sha256sum` and paste the hash into `ALLOWED`.
 - **Compliments and voice notes**: `assets/js/gacha-data.js`. `THREE_STAR` and `FOUR_STAR` are lists of text. Each `VOICE_NOTES` entry is `{ title, src, transcript }`, and the audio goes in `assets/audio/voice/`. `TOMATO_TEXT` is shown when you lose the 50/50.
 - **Gacha odds** are the Genshin ones (in `assets/js/gacha.js`): 5★ is 0.6%, rising by 6% per pull from pull 74, and guaranteed at 90. 4★ is 5.1%, 56.1% on pull 9, and guaranteed on pull 10. A 5★ is a voice note or a loss (50/50). A loss is a tomato or a rickroll, set in `FAILS` in `assets/js/gacha-data.js`, and after a loss the next 5★ is always a voice note. The very first 5★ is always the rickroll.
-- **Fanfics**: `assets/js/fanfic-data.js`. Replace the placeholders. `url` adds a "Read it" button, and `pages` (optional) is story text shown in the flip-book, one string per page.
+- **Fanfics**: `assets/js/fanfic-data.js`. Replace the placeholders. `summary` shows on the list, `about` is the longer description in the popup, and `url` adds a "Read it" button.
 - **Songs**: `assets/js/music.js` (`SONGS`), with audio in `assets/audio/`.
 - **Letters**: `assets/js/letters.js` (`LETTERS`), with images in `assets/letters/letterN-front.webp` / `letterN-back.webp`.
 - **Stickers**: add an image to `assets/img/stickers/` and its file name to `STICKERS` in `assets/js/garden.js`.

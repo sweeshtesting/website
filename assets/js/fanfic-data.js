@@ -1,6 +1,5 @@
-/* Fanfic list. Every entry below is a PLACEHOLDER: swap in the real details.
+/* Fanfic list. Entries named "Placeholder" still need real details.
    - url:   link to the fic on another site (shows a "Read it" button). Leave '' if none.
-   - pages: optional. Story text you host here, one string per page. Blank lines start new paragraphs.
    - rating: 'G', 'T', 'M' or 'E'.  complete: true / false.
    - category: 'M/M', 'F/F', 'F/M', 'Gen', 'Multi' or 'Other'.  warning: 'none', 'warnings' or 'chose'.
    - summary: short blurb on the list.  about: longer description shown when the fic is opened. */
@@ -14,8 +13,7 @@ window.FANFICS = [
     tags: ['Placeholder tag', 'Fluff', 'Slow burn'],
     summary: 'Placeholder summary. Replace this with the fic’s real summary.',
     words: '—', chapters: '—', kudos: '—',
-    url: '',
-    pages: []
+    url: ''
   },
   {
     title: 'Placeholder: Haikyuu fic title',
@@ -26,8 +24,7 @@ window.FANFICS = [
     tags: ['Placeholder tag', 'Volleyball', 'Found family'],
     summary: 'Placeholder summary. Replace this with the fic’s real summary.',
     words: '—', chapters: '—', kudos: '—',
-    url: '',
-    pages: []
+    url: ''
   },
   {
     title: 'Never Learn (It’s Pointless)',
@@ -41,8 +38,7 @@ window.FANFICS = [
     summary: 'Set after Rota Fortunae: android Aventurine reboots in Dr. Ratio’s care, and while Ratio fixes his language module, Aventurine has a small emotional crisis about everything that happened.',
     about: 'Inspired by the HoYoFair fan animation Rota Fortunae, this alternate universe reimagines Aventurine as an android. It picks up right after the events of that video, as Aventurine reboots in Dr. Ratio’s care.\n\nRatio’s first job is fixing his language module so they can finally talk properly. The module comes back online, but Aventurine’s motor functions don’t, and the one thing he does manage to say is a cheeky “I wasn’t, but thanks,” which earns him a “…Damned gambler.”\n\nWhat follows is a small emotional crisis: an insecure robot who is bad at feelings (and this time it has consequences), a surprisingly soft Dr. Ratio, and lots of mutual pining and hurt/comfort. It’s told in an experimental style that mixes dialogue with bracketed system messages. A short one-shot of about 5,300 words.',
     words: '5,352', chapters: '1/1', kudos: '8',
-    url: 'https://squidgeworld.org/works/77207',
-    pages: []
+    url: 'https://squidgeworld.org/works/77207'
   },
   {
     title: 'Instagrammable',
@@ -56,7 +52,6 @@ window.FANFICS = [
     summary: 'An AU where the world is kinder to Peter and the Spidey gang, and Instagram can’t get enough of photos of Spider-Man.',
     about: 'A light, canon-divergent take on Peter Parker’s senior year, where the world is a little nicer to Peter and the rest of the Spidey gang than it is in the films.\n\nThe story plays out largely through social media: Spider-Man has become Instagram’s favourite subject, and the internet is having a great time with every new photo of Spidey that turns up.\n\nNo angst and no archive warnings, just a quick, feel-good read in two short chapters (about 1,500 words).',
     words: '1,487', chapters: '2/2', kudos: '23',
-    url: 'https://squidgeworld.org/works/36923',
-    pages: []
+    url: 'https://squidgeworld.org/works/36923'
   }
 ];

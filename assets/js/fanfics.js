@@ -39,21 +39,15 @@
       </dl>
     </article>`).join('');
 
-  /* ---------- Reader (a little book) ---------- */
-  const reader = $('#reader'), book = $('#book'), count = $('#pg-count');
-  let pages = [], at = 0;
-
+  /* ---------- Fic details popup ---------- */
+  const reader = $('#reader'), book = $('#book');
   function open(i) {
     const f = FICS[i];
-    const cover = `<h2>${esc(f.title)}</h2>
+    book.innerHTML = `<div class="page">
+      <h2>${esc(f.title)}</h2>
       <div class="meta">by ${esc(f.author)} · ${esc(f.fandom)} · Rated ${esc(f.rating)}</div>
       ${paras(f.about || f.summary)}
-      ${f.url ? `<a class="btn read" href="${esc(f.url)}" target="_blank" rel="noopener">Read it ↗</a>` : ''}`;
-    const body = (f.pages || []).map(p => paras(p));
-    pages = [cover, ...body];
-    book.innerHTML = pages.map((html, n) =>
-      `<div class="page" style="z-index:${pages.length - n}">${html}<div class="pno">${n + 1}</div></div>`).join('');
-    at = 0; update();
+      ${f.url ? `<a class="btn read" href="${esc(f.url)}" target="_blank" rel="noopener">Read it ↗</a>` : ''}</div>`;
     reader.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -61,23 +55,8 @@
     reader.classList.remove('open');
     document.body.style.overflow = '';
   }
-  function update() {
-    [...book.children].forEach((p, n) => p.classList.toggle('turned', n < at));
-    count.textContent = `${at + 1} / ${pages.length}`;
-    $('#pg-prev').disabled = at === 0;
-    $('#pg-next').disabled = at >= pages.length - 1;
-  }
-  const go = d => { const n = at + d; if (n >= 0 && n < pages.length) { at = n; update(); } };
-
   $('#works').addEventListener('click', e => { const b = e.target.closest('h3 button'); if (b) open(+b.dataset.i); });
-  $('#pg-prev').addEventListener('click', () => go(-1));
-  $('#pg-next').addEventListener('click', () => go(1));
   reader.querySelector('.close').addEventListener('click', close);
   reader.addEventListener('click', e => { if (e.target === reader) close(); });
-  document.addEventListener('keydown', e => {
-    if (!reader.classList.contains('open')) return;
-    if (e.key === 'Escape') close();
-    if (e.key === 'ArrowLeft') go(-1);
-    if (e.key === 'ArrowRight') go(1);
-  });
+  document.addEventListener('keydown', e => { if (reader.classList.contains('open') && e.key === 'Escape') close(); });
 })();
