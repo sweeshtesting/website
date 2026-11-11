@@ -23,7 +23,7 @@
     if (!current) return;
     const ratio = current.landscape ? 1754 / 1241 : 1241 / 1754;
     flip.style.aspectRatio = String(ratio);
-    flip.style.width = current.landscape ? 'min(94vw, 1500px)' : 'min(94vw, 1050px)';
+    flip.style.width = current.landscape ? 'min(94vw, 1200px)' : 'min(94vw, 760px)';
     flip.style.height = 'auto';
   }
   function open(i) {
