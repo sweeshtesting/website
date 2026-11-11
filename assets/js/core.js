@@ -82,7 +82,10 @@
       <a class="logo" href="home.html" aria-label="Home"><img src="assets/img/flower-c.webp" alt=""></a>
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <nav>${links.map(([id, href, label]) =>
-        `<a href="${href}"${id === page ? ' aria-current="page"' : ''}>${label}</a>`).join('')}</nav>`;
+        `<a href="${href}"${id === page ? ' aria-current="page"' : ''}>${label}</a>`).join('')}<button class="logout in-menu">Log out</button></nav>
+      <button class="logout">Log out</button>`;
+    // Logging out forgets the passcode on this device and goes back to the lock screen.
+    header.querySelectorAll('.logout').forEach(b => b.addEventListener('click', () => Cozy.logout()));
     const toggle = header.querySelector('.nav-toggle');
     toggle.addEventListener('click', () => {
       const open = header.classList.toggle('open');
