@@ -66,6 +66,19 @@
   }
   fitDesign();
   window.addEventListener('resize', fitDesign);
+  // Pixel fonts blur when text lands between screen pixels. Nudge text-heavy blocks
+  // ([data-snap]) by their leftover fraction of a pixel so they sit on whole pixels.
+  function snap() {
+    document.querySelectorAll('[data-snap]').forEach(el => {
+      el.style.transform = '';
+      const r = el.getBoundingClientRect(), y = r.top + window.scrollY;
+      const dx = r.left - Math.round(r.left), dy = y - Math.round(y);
+      if (dx || dy) el.style.transform = `translate(${-dx}px, ${-dy}px)`;
+    });
+  }
+  window.addEventListener('load', snap);
+  window.addEventListener('resize', snap);
+  if (document.fonts) document.fonts.ready.then(snap);
 
   // Header + footer markup, shared by all pages.
   const page = document.body.dataset.page;
