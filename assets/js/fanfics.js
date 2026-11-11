@@ -6,7 +6,7 @@
 
   /* AO3-style square: rating, category / warnings, status. */
   const RATING = { G: 'g', T: 't', M: 'm', E: 'e' };
-  const CATEGORY = { 'M/M': ['mm', '♂'], 'F/F': ['ff', '♀'], 'F/M': ['fm', '⚥'], Gen: ['gen', '○'], Multi: ['multi', '⚥'], Other: ['other', '?'] };
+  const CATEGORY = { 'M/M': ['mm', '♂'], 'F/F': ['ff', '♀'], 'F/M': ['fm', '⚥'], Gen: ['gen', '&'], Multi: ['multi', '⚥'], Other: ['other', '?'] };
   const WARNING = { none: ['none', ''], warnings: ['yes', '!'], chose: ['chose', '?'] };
   function badges(f) {
     const [cc, cs] = CATEGORY[f.category] || ['none', ''];

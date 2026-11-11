@@ -45,15 +45,18 @@ window.FANFICS = [
     pages: []
   },
   {
-    title: 'Placeholder: Spider-Man fic title',
-    author: 'author name',
-    fandom: 'Spider-Man (Tom Holland films)',
-    rating: 'T',
+    title: 'Instagrammable',
+    author: 'Charity_Angel',
+    fandom: 'Marvel Cinematic Comics TV Universe, Spider-Man (Tom Holland)',
+    rating: 'G',
+    category: 'Gen',
+    warning: 'none',
     complete: true,
-    tags: ['Peter Parker', 'Placeholder tag', 'Fluff'],
-    summary: 'Placeholder summary. Replace this with the fic’s real summary.',
-    words: '—', chapters: '—', kudos: '—',
-    url: '',
+    tags: ['No Archive Warnings Apply', 'Peter Parker | Spiderman', 'Alternate Universe - Canon Divergence', 'Social Media', 'Senior Year'],
+    summary: 'An AU where the world is kinder to Peter and the Spidey gang, and Instagram can’t get enough of photos of Spider-Man.',
+    about: 'A light, canon-divergent take on Peter Parker’s senior year, where the world is a little nicer to Peter and the rest of the Spidey gang than it is in the films.\n\nThe story plays out largely through social media: Spider-Man has become Instagram’s favourite subject, and the internet is having a great time with every new photo of Spidey that turns up.\n\nNo angst and no archive warnings, just a quick, feel-good read in two short chapters (about 1,500 words).',
+    words: '1,487', chapters: '2/2', kudos: '23',
+    url: 'https://squidgeworld.org/works/36923',
     pages: []
   }
 ];
