@@ -101,5 +101,19 @@ window.FANFICS = [
     about: 'Set during season 1, episode 19, Oikawa stays up far too late watching the recording of Karasuno’s match, over and over, headphones on. Iwaizumi catches him red-handed.\n\n“You don’t have to come here and take care of me. I’ll be fine,” Oikawa insists. Iwaizumi isn’t buying it: red, strained eyes, hair a mess from the headphones, and a boy who has only been hurting himself over that screen. (“Mean, Iwa-chan! Mean!”)\n\nA canon-universe IwaOi story about an established couple, with a future athletic trainer Iwaizumi looking after his boyfriend. Soft boys being soft, and god, they’re so in love. A short one-shot of about 1,800 words, and part 4 of the series “and they were captains”.',
     words: '1,831', chapters: '1/1', kudos: '20',
     url: 'https://squidgeworld.org/works/48493'
+  },
+  {
+    title: 'The Life? of Peter Parker',
+    author: 'MistbornHero',
+    fandom: 'Spider-Man [Tom Holland Movies], Daredevil [Marvel TV]',
+    rating: 'T',
+    category: 'Gen',
+    warning: 'none',
+    complete: true,
+    tags: ['No Archive Warnings Apply', 'Matt Murdock & Peter Parker', 'Peter Parker & Tony Stark', 'James "Bucky" Barnes & Peter Parker', 'Peter Parker | Spiderman', 'Matt Murdock', 'Tony Stark', 'James Buchanan "Bucky" Barnes | The Winter Soldier', 'May Parker', 'Pepper Potts [MCU]', 'Natasha Romanov', 'Clint Barton', 'Steve Rogers', 'Jessica Jones', 'Frank Castle', 'Wanda Maximoff', 'Wade Wilson | Deadpool', 'Ned Leeds', 'Loki [MCU]', 'Michelle Jones', 'Post-Avengers: Infinity War (Movie)', 'Protective Tony Stark', 'Interns & Internships', 'Secret Identity', 'Fluff and Combat', 'Domestic Fluff', 'Slice of Life', 'Team Red [Marvel]'],
+    summary: 'Tony, May, Flash and the Avengers all want something from Peter. All Peter wants is to be Spider-Man and live his normal life.',
+    about: 'Everyone wants something from Peter Parker. Tony wants him living in the tower full time (Pepper makes that more reasonable). May wants him safe and happy (Spider-Man is reasonable, but only just). Flash wants to expose his lies to the world, even though it isn’t a lie anymore, since he really does intern at Stark Industries. And the Avengers want him on their team, saving the world, while forgetting that he has normal problems too.\n\nAll Peter wants is to be Spider-Man, helping everyday people while living his normal life. That’s hard when so many people want something more from him.\n\nA big, slice-of-life Marvel story set after Infinity War, with a protective Tony, intern life, a secret identity to keep, and plenty of domestic fluff mixed with fights. Team Red (Matt Murdock, Jessica Jones, Frank Castle) shows up alongside the Avengers, Bucky, Wade, Ned and MJ. It’s complete in 7 chapters (about 29,500 words), and part 1 of the series “Heroes vs Life”.',
+    words: '29,465', chapters: '7/7', kudos: '77',
+    url: 'https://squidgeworld.org/works/113126'
   }
 ];
