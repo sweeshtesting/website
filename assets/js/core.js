@@ -72,7 +72,7 @@
   const links = [
     ['letters', 'letters.html', 'Letters'],
     ['music', 'music.html', 'Music'],
-    ['gacha', 'gacha.html', 'Gaccha'],
+    ['gacha', 'gacha.html', 'Gacha'],
     ['garden', 'garden.html', 'Farm'],
     ['fanfics', 'fanfics.html', 'Fanfics']
   ];
