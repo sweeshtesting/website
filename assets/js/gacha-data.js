@@ -60,7 +60,7 @@ window.GACHA_DATA = {
   ],
 
   VOICE_NOTES: [
-    { title: 'Voice note #1', src: null, transcript: 'This voice note hasn’t been recorded yet. Soon!' },
+    { title: 'Voice note #1', src: 'assets/audio/voice/note1.mp3', transcript: 'Happy birthday! You are officially 21! You are now old as shit! No, I’m kidding, I’m just being an ass. I hope that your day is filled with nothing but happy memories, surrounded by the people you cherish! It’s a shame I couldn’t be there with you, but I’ll try to make it special for you in my own way. You’re an amazing person who deserves everything this world has to offer, and I hope the coming years will be kind to you. I know sometimes shit can be pretty tough and horrid, but I want you to know that I will always believe in you, because I know you will always find a way out of any predicament life throws at you. Happy birthday once again, and have an amazing day, my beautiful butterfly.' },
     { title: 'Voice note #2', src: null, transcript: 'This voice note hasn’t been recorded yet. Soon!' },
     { title: 'Voice note #3', src: null, transcript: 'This voice note hasn’t been recorded yet. Soon!' }
   ],
