@@ -3,7 +3,8 @@
   // SHA-256 hashes of the allowed passcodes (so the codes aren't readable in the source).
   const ALLOWED = [
     '91b4d142823f7d20c5f08df69122de43f35f057a988d9619f6d3138485c9a203', // 000000 (testing)
-    '628620393dac3f8553d7c9fd6132fcd329f56407af25564ba9d5bf4cc8e20857'  // 121105
+    '628620393dac3f8553d7c9fd6132fcd329f56407af25564ba9d5bf4cc8e20857', // 121105
+    '8c83f760edfb261c749cda6a5372bdd9223a8e2e52df026d0237deb63683ab56'  // 121104
   ];
   const KEY = 'cozy.code';
 
