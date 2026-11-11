@@ -18,12 +18,12 @@
   const [front, back] = flip.querySelectorAll('img');
   let current = null;
 
-  // Shown wide enough to read comfortably (close to the scan's real size). Taller letters scroll inside the viewer.
+  // The whole letter fits on screen: as tall as the window allows (minus a margin), never wider than the screen.
   function size() {
     if (!current) return;
     const ratio = current.landscape ? 1754 / 1241 : 1241 / 1754;
     flip.style.aspectRatio = String(ratio);
-    flip.style.width = current.landscape ? 'min(94vw, 1200px)' : 'min(94vw, 760px)';
+    flip.style.width = `min(94vw, calc((100vh - 80px) * ${ratio}))`;
     flip.style.height = 'auto';
   }
   function open(i) {
