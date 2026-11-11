@@ -18,8 +18,6 @@
   --orange: #ff8559;
   --pixel: 'Pixel Digivolve', 'Courier New', monospace;
   --mc: 'Minecraft Seven', 'Courier New', monospace;
-  /* AO3's own font stack, used for the small text on the fanfic list (the pixel font turns c into o at small sizes). */
-  --ao3: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Helvetica, sans-serif;
   --mono: 'DM Mono', ui-monospace, monospace;
 }
 * { box-sizing: border-box; }
@@ -453,7 +451,7 @@ body.dark-page { background: #10172f; }
 .ao3-intro .brand small { display: block; font-size: 13px; opacity: .8; margin-top: 6px; }
 .ao3-intro .body-text { max-width: calc(560 * var(--u)); margin: calc(30 * var(--u)) 0 0 calc(117 * var(--u)); white-space: pre-line; }
 .ao3-intro .art { position: absolute; right: calc(75 * var(--u) + var(--off)); top: 0; width: calc(330 * var(--u)); animation: float 6s ease-in-out infinite; }
-.works { margin: round(calc(38 * var(--u)), 1px) round(calc(75 * var(--u) + var(--off)), 1px) round(calc(120 * var(--u)), 1px) round(calc(76 * var(--u) + var(--off)), 1px); box-shadow: 0 2px 5px rgba(0, 0, 0, .1); }
+.works { margin: calc(38 * var(--u)) calc(75 * var(--u) + var(--off)) calc(120 * var(--u)) calc(76 * var(--u) + var(--off)); box-shadow: 0 2px 5px rgba(0, 0, 0, .1); }
 .works-head { background: #555; border-bottom: 5px solid #900; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 14px; color: #fff; }
 .works-head h2 { font-family: var(--pixel); font-weight: 400; font-size: 19px; margin: 0; text-transform: uppercase; }
 .works-head span { font-family: Arial, sans-serif; font-size: 13px; }
@@ -468,15 +466,15 @@ body.dark-page { background: #10172f; }
 .work .b-c-mm { background: #3a6fb0; } .work .b-c-ff { background: #c8102e; } .work .b-c-fm { background: #7a3b98; } .work .b-c-gen { background: #77a34c; } .work .b-c-multi { background: linear-gradient(135deg, #c8102e, #7a3b98 50%, #3a6fb0); } .work .b-c-other { background: #333; } .work .b-c-none { background: #fff; }
 .work .b-w-none { background: #fff; } .work .b-w-yes { background: #c8102e; } .work .b-w-chose { background: #e08b1e; }
 .work .b-s-done { background: #5d9b34; } .work .b-s-wip { background: #c8102e; }
-.work h3 { margin: 0; font-family: var(--pixel); font-weight: 400; font-size: 23px; line-height: 34px; }
+.work h3 { margin: 0; font-family: var(--pixel); font-weight: 400; font-size: 23px; line-height: 34.5px; }
 .work h3 button { color: #900; text-decoration: underline; text-transform: uppercase; text-align: left; }
 .work h3 button:hover { color: #c00; }
-.work .by { font-family: var(--ao3); font-size: 14px; color: #2a2a2a; margin-top: 3px; }
+.work .by { font-size: 14px; color: #2a2a2a; margin-top: 3px; }
 .work .by b { color: #900; font-weight: 400; }
-.work .fandom { font-family: var(--pixel); font-size: 15px; line-height: 22px; margin-top: 10px; text-transform: uppercase; }
+.work .fandom { font-family: var(--pixel); font-size: 15px; line-height: 22.5px; margin-top: 10px; text-transform: uppercase; }
 .work .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 11px; }
-.work .tags span { font-family: var(--ao3); font-size: 13px; line-height: 16px; padding: 4px 7px; border: 1px solid #aaa; border-radius: 4px; background: linear-gradient(#fff, #ddd); box-shadow: 0 1px 1px rgba(0, 0, 0, .12); color: #111; }
-.work .summary { font-family: var(--ao3); font-size: 15px; line-height: 23px; margin: 14px 0 0; color: #333; }
+.work .tags span { font-size: 13px; padding: 4px 7px; border: 1px solid #aaa; border-radius: 4px; background: linear-gradient(#fff, #ddd); box-shadow: 0 1px 1px rgba(0, 0, 0, .12); color: #111; }
+.work .summary { font-size: 16px; line-height: 24px; margin: 14px 0 0; color: #333; }
 .work dl { margin: 0; border-top: 1px solid #bbb; font-family: Arial, sans-serif; font-size: 13px; }
 .work dl div { display: flex; justify-content: space-between; padding: 7px 3px; border-bottom: 1px dashed #aaa; }
 .work dt { color: #555; } .work dd { margin: 0; font-weight: bold; }
