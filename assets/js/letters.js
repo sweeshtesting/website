@@ -18,12 +18,18 @@
   const [front, back] = flip.querySelectorAll('img');
   let current = null;
 
-  // The whole letter fits on screen: as tall as the window allows (minus a margin), never wider than the screen.
+  // Normal view: wide enough to read comfortably (taller letters scroll).
+  // Zoomed out: the whole letter fits on screen. The Zoom button switches between them.
+  let zoomedOut = false;
+  const zoom = document.getElementById('zoom');
   function size() {
     if (!current) return;
     const ratio = current.landscape ? 1754 / 1241 : 1241 / 1754;
     flip.style.aspectRatio = String(ratio);
-    flip.style.width = `min(94vw, calc((100vh - 80px) * ${ratio}))`;
+    flip.style.width = zoomedOut ? `min(94vw, calc((100vh - 80px) * ${ratio}))`
+      : current.landscape ? 'min(94vw, 1200px)' : 'min(94vw, 760px)';
+    zoom.textContent = zoomedOut ? '+ Zoom in' : '− Zoom out';
+    zoom.setAttribute('aria-pressed', zoomedOut);
     flip.style.height = 'auto';
   }
   function open(i) {
@@ -52,4 +58,5 @@
   viewer.addEventListener('click', e => { if (e.target === viewer) close(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
   window.addEventListener('resize', size);
+  zoom.addEventListener('click', () => { zoomedOut = !zoomedOut; size(); viewer.scrollTop = 0; });
 })();
