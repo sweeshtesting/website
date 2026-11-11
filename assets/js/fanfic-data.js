@@ -98,11 +98,7 @@ window.FANFICS = [
     complete: true,
     tags: ['Creator Chose Not To Use Archive Warnings', 'Iwaizumi Hajime/Oikawa Tooru', 'Iwaizumi Hajime', 'Oikawa Tooru', 'Canon Universe', 'Established Relationships', 'Fluff', 'Future Athletic Trainer Iwaizumi Hajime', 'Soft Boys Being Soft', 'god they’re so in love'],
     summary: 'Oikawa stays up late rewatching Karasuno’s match, and Iwaizumi catches him red-handed.',
-    about: 'Set during season 1, episode 19, Oikawa stays up far too late watching the recording of Karasuno’s match, over and over, headphones on. Iwaizumi catches him red-handed.
-
-“You don’t have to come here and take care of me. I’ll be fine,” Oikawa insists. Iwaizumi isn’t buying it: red, strained eyes, hair a mess from the headphones, and a boy who has only been hurting himself over that screen. (“Mean, Iwa-chan! Mean!”)
-
-A canon-universe IwaOi story about an established couple, with a future athletic trainer Iwaizumi looking after his boyfriend. Soft boys being soft, and god, they’re so in love. A short one-shot of about 1,800 words, and part 4 of the series “and they were captains”.',
+    about: 'Set during season 1, episode 19, Oikawa stays up far too late watching the recording of Karasuno’s match, over and over, headphones on. Iwaizumi catches him red-handed.\n\n“You don’t have to come here and take care of me. I’ll be fine,” Oikawa insists. Iwaizumi isn’t buying it: red, strained eyes, hair a mess from the headphones, and a boy who has only been hurting himself over that screen. (“Mean, Iwa-chan! Mean!”)\n\nA canon-universe IwaOi story about an established couple, with a future athletic trainer Iwaizumi looking after his boyfriend. Soft boys being soft, and god, they’re so in love. A short one-shot of about 1,800 words, and part 4 of the series “and they were captains”.',
     words: '1,831', chapters: '1/1', kudos: '20',
     url: 'https://squidgeworld.org/works/48493'
   }
