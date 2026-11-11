@@ -41,7 +41,12 @@ window.GACHA_DATA = {
     'You’re my favorite 5 star unit <3',
     'You brighten people’s lives.',
     'You understand the people around you. I hope they do the same for you <3',
-    'I hope the world can listen and understand people as well as you do.'
+    'I hope the world can listen and understand people as well as you do.',
+    'I like your weird brain very much.',
+    'You inspire the people around you to do better.',
+    'If you cast a spell like Wanda and took a town under your control, I would never leave.',
+    'Your taste in perfumes is amazing.',
+    'You make me look forward to the next day.'
   ],
 
   FOUR_STAR: [
@@ -49,7 +54,9 @@ window.GACHA_DATA = {
     'What do you think of when you draw? Where do the ideas come from? What about the colours? It’s mesmerizing to watch you draw and come up with these amazing things. Your paintings, digital art and craft skills all reflect your hard work and passion. I hope you never stop, and I hope you can host an art exhibition of your own one day.',
     'I hope one day I can build a little garden for you and fill it with everything that would make you smile as brightly as you do. In this garden, I’d make a swing just for you, so you can daydream without ever having to wait your turn again.',
     'I often imagine a medieval world where you are a beautiful dame who can do anything she sets her mind to. If you were accused of being a witch, I’d perform magic with you. If you were to take up the sword, I’d gladly be your sparring partner. If you were a queen, I’d only hope I had the privilege of courting you. If you were an artist, I’d buy all of your pieces and make sure the world could see the beauty you bring to it.',
-    'You’re the type of girl they write poetry about. They could only hope to capture the essence of who you are, but I think they would always fall short. I am no exception to this rule. I could invent new words and learn different languages, and I still wouldn’t be able to truly describe you to someone else.'
+    'You’re the type of girl they write poetry about. They could only hope to capture the essence of who you are, but I think they would always fall short. I am no exception to this rule. I could invent new words and learn different languages, and I still wouldn’t be able to truly describe you to someone else.',
+    'You have this charm about you that draws people in. You’re bright and enthusiastic about the things you love and can keep raving about them day after day. Not many people can be that openly passionate about the things that mean the most to them. I am glad that you always are, and I hope you will always be this way.',
+    'The rooftop in Penacony was so beautiful to see. Thank you for showing me something like that; it was truly so special. You know, I hope I can show you something like that in the future, minus the whole overarching politics of Penacony. I am not good at politics.'
   ],
 
   VOICE_NOTES: [
