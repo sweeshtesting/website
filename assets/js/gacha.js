@@ -4,7 +4,8 @@
   /* ---------- Genshin-style odds ----------
      5★: 0.6% base. From pull 74 the chance rises by 6% per pull; pull 90 is guaranteed.
      4★: 5.1% base. Pull 9 since the last 4★ is 56.1%; pull 10 is guaranteed.
-     50/50: a 5★ is either a voice note or a loss (tomato or rickroll). After a loss, the next 5★ is always a voice note. */
+     50/50: a 5★ is either a voice note or a loss (tomato or rickroll). After a loss, the next 5★ is always a voice note.
+     The very first 5★ is always the rickroll, as a joke. */
   function chance5(n) { return n >= 90 ? 1 : n < 74 ? 0.006 : Math.min(1, 0.006 + 0.06 * (n - 73)); }
   function chance4(n) { return n >= 10 ? 1 : n === 9 ? 0.561 : 0.051; }
 
@@ -20,6 +21,8 @@
   const FAILS = D.FAILS.map(f => ({ id: f.id, rarity: 5, fail: f }));
   if (state.tomatoes && !state.owned.tomato) state.owned.tomato = state.tomatoes;
   delete state.tomatoes;
+  // The very first 5★ is always the rickroll (counts as a lost 50/50). Saves that already have a 5★ skip this.
+  if (!state.got5) state.got5 = [...pool[5], ...FAILS].some(it => state.owned[it.id]);
 
   function pick(list) {
     // Prefer rewards you don't have yet, so the collection fills up.
@@ -35,7 +38,8 @@
     let item;
     if (r < chance5(n5)) {
       state.pity5 = 0; state.pity4 = n4;
-      if (state.guaranteed || Math.random() < 0.5) { state.guaranteed = false; item = pick(pool[5]); }
+      if (!state.got5) { state.got5 = true; state.guaranteed = true; item = FAILS.find(f => f.id === 'rickroll') || pick(FAILS); }
+      else if (state.guaranteed || Math.random() < 0.5) { state.guaranteed = false; item = pick(pool[5]); }
       else { state.guaranteed = true; item = pick(FAILS); }
     } else if (Math.random() < chance4(n4)) {
       state.pity5 = n5; state.pity4 = 0; item = pick(pool[4]);
