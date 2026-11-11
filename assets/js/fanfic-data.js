@@ -115,5 +115,19 @@ window.FANFICS = [
     about: 'Everyone wants something from Peter Parker. Tony wants him living in the tower full time (Pepper makes that more reasonable). May wants him safe and happy (Spider-Man is reasonable, but only just). Flash wants to expose his lies to the world, even though it isn’t a lie anymore, since he really does intern at Stark Industries. And the Avengers want him on their team, saving the world, while forgetting that he has normal problems too.\n\nAll Peter wants is to be Spider-Man, helping everyday people while living his normal life. That’s hard when so many people want something more from him.\n\nA big, slice-of-life Marvel story set after Infinity War, with a protective Tony, intern life, a secret identity to keep, and plenty of domestic fluff mixed with fights. Team Red (Matt Murdock, Jessica Jones, Frank Castle) shows up alongside the Avengers, Bucky, Wade, Ned and MJ. It’s complete in 7 chapters (about 29,500 words), and part 1 of the series “Heroes vs Life”.',
     words: '29,465', chapters: '7/7', kudos: '77',
     url: 'https://squidgeworld.org/works/113126'
+  },
+  {
+    title: 'Bedtime Stories',
+    author: 'Aelphaba',
+    fandom: 'Marvel Cinematic Comics TV Universe, The Avengers [Marvel Movies], Avengers: Endgame [2019]',
+    rating: 'G',
+    category: 'Gen',
+    warning: 'none',
+    complete: true,
+    tags: ['No Archive Warnings Apply', 'Peter Parker & Morgan Stark', 'Morgan Stark & Tony Stark', 'Pepper Potts & Morgan Stark', 'Peter Parker & Tony Stark', 'Morgan Stark [MCU]', 'Peter Parker | Spiderman', 'Pepper Potts [MCU]', 'James "Rhodey" Rhodes', 'Tony Stark Acting as Peter Parker\'s Parental Figure', 'Tony Stark Has A Heart', 'POV Morgan Stark', 'parent Tony Stark', 'Parent Pepper Potts', 'Big Brother Peter Parker', 'Post-Avengers: Endgame (Movie)', 'Cross-Posted from Archive of Our Own (AO3)', 'Cross-Posted on Fanfiction.net'],
+    summary: 'Daddy told the best bedtime stories. Mommy’s stories were good, but Daddy’s were always the best.',
+    about: 'Daddy told the best bedtime stories. Mommy’s stories were good, but Daddy’s were always the best.\n\nTold from Morgan Stark’s point of view, this is a gentle family story about the stories Tony used to tell her at bedtime, and the people in them: Pepper, Rhodey, and a big brother named Peter, with Tony as the parent and father figure at the heart of it all.\n\nSet after Avengers: Endgame, it’s soft and bittersweet, all about family and the way stories keep the people we love close. A short one-shot of about 1,800 words.',
+    words: '1,784', chapters: '1/1', kudos: '31',
+    url: 'https://squidgeworld.org/works/113382'
   }
 ];
