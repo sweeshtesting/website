@@ -73,5 +73,19 @@ window.FANFICS = [
     about: 'Himeko almost didn’t show up. When she does, she is ready to be annoyed by Kafka’s usual talk of fate and crossing paths, but Kafka cuts through it with a single, sharp “No.”\n\nKafka looks down at her own work, choosing her words unusually carefully, and Himeko can’t help wondering what has made her so thoughtful. Then Kafka finally meets her eyes and asks: “Do you dream of fire?”\n\nA quiet, thoughtful Himeko/Kafka story, with Welt and the rest of the Astral Express crew making background cameos. A one-shot of about 4,300 words.',
     words: '4,284', chapters: '1/1', kudos: '5',
     url: 'https://squidgeworld.org/works/63451'
+  },
+  {
+    title: 'Coffee, Games, and Midnight Truths',
+    author: 'Escrovisck',
+    fandom: '僕のヒーローアカデミア | Boku no Hero Academia | My Hero Academia',
+    rating: 'G',
+    category: 'Gen',
+    warning: 'none',
+    complete: true,
+    tags: ['No Archive Warnings Apply', 'Eri & Midoriya Izuku', 'Iida Tenya & Shinsou Hitoshi', 'Bakugou Katsuki & Iida Tenya & Shinsou Hitoshi', 'Iida Tenya & Midoriya Izuku', 'Midoriya Izuku & Shinsou Hitoshi', 'Eri (My Hero Academia)', 'Iida Tenya', 'Bakugou Katsuki', 'Shinsou Hitoshi', 'Midoriya Izuku', 'Late Night Conversations', 'Eri Needs a Hug (My Hero Academia)', 'Midoriya Izuku Needs a Hug', 'Midnight Cooffee', 'Domestic Fluff', 'Midoriya Izuku’s Hair Is Fluffy Because It’s Full Of Secrets', 'Tooth-Rotting Fluff', 'Fluff without Plot', 'POV Iida Tenya', 'Eri is a Ray of Sunshine (My Hero Academia)', 'Game: Talking Tom Hero Dash'],
+    summary: 'Iida gets out of bed to scold whoever is breaking curfew, and somehow ends up being completely fine with it.',
+    about: 'When Iida got out of bed to give a piece of his mind to whoever was disturbing the curfew, he was not expecting to be fine with it afterwards.\n\nTold from Iida’s point of view, this is a cozy late-night story in the dorms: midnight coffee, a round of Talking Tom Hero Dash, and some late-night conversations with Midoriya, Shinsou, Bakugou and a very sunny Eri. Expect hugs for both Eri and Izuku, and fluff in more ways than one (Izuku’s hair included).\n\nPure domestic, tooth-rotting fluff without plot. A one-shot of about 2,350 words, and part 1 of the series “All For Oneshots”.',
+    words: '2,348', chapters: '1/1', kudos: '16',
+    url: 'https://squidgeworld.org/works/79139'
   }
 ];
