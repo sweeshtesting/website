@@ -474,7 +474,7 @@ body.dark-page { background: #10172f; }
 .work .fandom { font-family: var(--pixel); font-size: 15px; line-height: 22.5px; margin-top: 10px; text-transform: uppercase; }
 .work .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 11px; }
 .work .tags span { font-size: 13px; padding: 4px 7px; border: 1px solid #aaa; border-radius: 4px; background: linear-gradient(#fff, #ddd); box-shadow: 0 1px 1px rgba(0, 0, 0, .12); color: #111; }
-.work .summary { font-size: 16px; line-height: 24px; margin: 14px 0 0; color: #333; }
+.work .summary { font-size: 20px; line-height: 30px; margin: 14px 0 0; color: #333; }
 .work dl { margin: 0; border-top: 1px solid #bbb; font-family: Arial, sans-serif; font-size: 13px; }
 .work dl div { display: flex; justify-content: space-between; padding: 7px 3px; border-bottom: 1px dashed #aaa; }
 .work dt { color: #555; } .work dd { margin: 0; font-weight: bold; }
