@@ -129,5 +129,19 @@ window.FANFICS = [
     about: 'Daddy told the best bedtime stories. Mommy’s stories were good, but Daddy’s were always the best.\n\nTold from Morgan Stark’s point of view, this is a gentle family story about the stories Tony used to tell her at bedtime, and the people in them: Pepper, Rhodey, and a big brother named Peter, with Tony as the parent and father figure at the heart of it all.\n\nSet after Avengers: Endgame, it’s soft and bittersweet, all about family and the way stories keep the people we love close. A short one-shot of about 1,800 words.',
     words: '1,784', chapters: '1/1', kudos: '31',
     url: 'https://squidgeworld.org/works/113382'
+  },
+  {
+    title: 'Projections',
+    author: 'FreeGrain',
+    fandom: 'Marvel Cinematic Comics TV Universe',
+    rating: 'E',
+    category: 'F/F',
+    warning: 'none',
+    complete: true,
+    tags: ['No Archive Warnings Apply', 'Natasha Romanov/Wanda Maximoff', 'Wanda Maximoff', 'Natasha Romanov | Black Widow', 'Semi-Public Sex', 'Mind Sex', 'Thigh Riding'],
+    summary: 'Wanda wants to pay attention to their next mission brief, but it’s hard when her girlfriend is sitting next to her and her thoughts are loud.',
+    about: 'Wanda wants to pay attention to their next mission brief, but it’s hard when her girlfriend is sitting right next to her and her thoughts are so loud. The hand on her thigh tells her it isn’t an accident either.\n\nA short Wanda/Natasha one-shot that plays with Wanda’s telepathy: a very distracting briefing, a girlfriend who knows exactly what she’s doing, and the challenge of keeping a straight face in a room full of Avengers.\n\nRated Explicit. About 1,500 words.',
+    words: '1,560', chapters: '1/1', kudos: '19',
+    url: 'https://squidgeworld.org/works/72451'
   }
 ];
