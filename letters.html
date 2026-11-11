@@ -6,7 +6,7 @@
 <link rel="icon" href="assets/img/flower-c.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=1794389450">
+<link rel="stylesheet" href="assets/css/style.css?v=1794389605">
 <title>Letters · Our Cozy Corner</title>
 </head>
 <body data-page="letters">
@@ -26,7 +26,11 @@
 
 <div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Letter">
   <button class="close" aria-label="Close">X</button>
-  <button class="zoom" id="zoom" aria-pressed="false">− Zoom out</button>
+  <div class="zoom-ctrl" role="group" aria-label="Zoom">
+    <button id="zoom-out" aria-label="Zoom out">−</button>
+    <button id="zoom-fit" aria-label="Fit to screen">100%</button>
+    <button id="zoom-in" aria-label="Zoom in">+</button>
+  </div>
   <div class="flip-card" id="flip" tabindex="0" role="button" aria-label="Flip the letter">
     <div class="flip-inner">
       <div class="face front"><img alt=""></div>
@@ -36,7 +40,7 @@
   <div class="hint">Click to flip!</div>
 </div>
 
-<script src="assets/js/core.js?v=1794389450"></script>
-<script src="assets/js/letters.js?v=1794389450"></script>
+<script src="assets/js/core.js?v=1794389605"></script>
+<script src="assets/js/letters.js?v=1794389605"></script>
 </body>
 </html>
