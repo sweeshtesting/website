@@ -18,6 +18,8 @@
   --orange: #ff8559;
   --pixel: 'Pixel Digivolve', 'Courier New', monospace;
   --mc: 'Minecraft Seven', 'Courier New', monospace;
+  /* AO3's own font stack, used for the small text on the fanfic list (the pixel font turns c into o at small sizes). */
+  --ao3: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Helvetica, sans-serif;
   --mono: 'DM Mono', ui-monospace, monospace;
 }
 * { box-sizing: border-box; }
@@ -469,12 +471,12 @@ body.dark-page { background: #10172f; }
 .work h3 { margin: 0; font-family: var(--pixel); font-weight: 400; font-size: 23px; line-height: 34px; }
 .work h3 button { color: #900; text-decoration: underline; text-transform: uppercase; text-align: left; }
 .work h3 button:hover { color: #c00; }
-.work .by { font-size: 16px; color: #2a2a2a; margin-top: 3px; }
+.work .by { font-family: var(--ao3); font-size: 14px; color: #2a2a2a; margin-top: 3px; }
 .work .by b { color: #900; font-weight: 400; }
 .work .fandom { font-family: var(--pixel); font-size: 15px; line-height: 22px; margin-top: 10px; text-transform: uppercase; }
 .work .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 11px; }
-.work .tags span { font-size: 16px; line-height: 16px; padding: 4px 7px; border: 1px solid #aaa; border-radius: 4px; background: linear-gradient(#fff, #ddd); box-shadow: 0 1px 1px rgba(0, 0, 0, .12); color: #111; }
-.work .summary { font-size: 16px; line-height: 24px; margin: 14px 0 0; color: #333; }
+.work .tags span { font-family: var(--ao3); font-size: 13px; line-height: 16px; padding: 4px 7px; border: 1px solid #aaa; border-radius: 4px; background: linear-gradient(#fff, #ddd); box-shadow: 0 1px 1px rgba(0, 0, 0, .12); color: #111; }
+.work .summary { font-family: var(--ao3); font-size: 15px; line-height: 23px; margin: 14px 0 0; color: #333; }
 .work dl { margin: 0; border-top: 1px solid #bbb; font-family: Arial, sans-serif; font-size: 13px; }
 .work dl div { display: flex; justify-content: space-between; padding: 7px 3px; border-bottom: 1px dashed #aaa; }
 .work dt { color: #555; } .work dd { margin: 0; font-weight: bold; }
