@@ -59,5 +59,19 @@ window.FANFICS = [
     about: 'A light, canon-divergent take on Peter Parker’s senior year, where the world is a little nicer to Peter and the rest of the Spidey gang than it is in the films.\n\nThe story plays out largely through social media: Spider-Man has become Instagram’s favourite subject, and the internet is having a great time with every new photo of Spidey that turns up.\n\nNo angst and no archive warnings, just a quick, feel-good read in two short chapters (about 1,500 words).',
     words: '1,487', chapters: '2/2', kudos: '23',
     url: 'https://squidgeworld.org/works/36923'
+  },
+  {
+    title: 'meteorites',
+    author: 'astriferous',
+    fandom: '崩坏：星穹铁道 | Honkai: Star Rail [Video Game]',
+    rating: 'M',
+    category: 'F/F',
+    warning: 'none',
+    complete: true,
+    tags: ['No Archive Warnings Apply', 'Himeko/Kafka', 'Himeko [Honkai: Star Rail]', 'Kafka [Honkai: Star Rail]', 'Welt Yang [Honkai]', 'astral express team background cameos'],
+    summary: 'Kafka and Himeko meet again, fated to cross paths, and Kafka has one carefully chosen question for her: “Do you dream of fire?”',
+    about: 'Himeko almost didn’t show up. When she does, she is ready to be annoyed by Kafka’s usual talk of fate and crossing paths, but Kafka cuts through it with a single, sharp “No.”\n\nKafka looks down at her own work, choosing her words unusually carefully, and Himeko can’t help wondering what has made her so thoughtful. Then Kafka finally meets her eyes and asks: “Do you dream of fire?”\n\nA quiet, thoughtful Himeko/Kafka story, with Welt and the rest of the Astral Express crew making background cameos. A one-shot of about 4,300 words.',
+    words: '4,284', chapters: '1/1', kudos: '5',
+    url: 'https://squidgeworld.org/works/63451'
   }
 ];
