@@ -154,7 +154,7 @@
     } else if (it.voice) {
       const v = it.voice;
       paper.innerHTML = `<div class="stars">${stars}</div>
-        <p class="transcript"><span class="said"></span><span class="later">${esc(v.transcript || '')}</span></p>
+        <p class="transcript"><span class="said"></span><span class="cur"></span><span class="later">${esc(v.transcript || '')}</span></p>
         <div class="vn">
           <div class="seek"><div class="track"></div><div class="fill"></div><span class="t0">0:00</span><span class="t1">0:00</span></div>
           <button class="play-btn" aria-label="Play voice note" ${v.src ? '' : 'disabled style="opacity:.4"'}></button>
@@ -196,7 +196,16 @@
       const k = Math.round(words.length * p);
       said.textContent = words.slice(0, k).join(''); later.textContent = words.slice(k).join('');
       btn.classList.toggle('on', !vAudio.paused);
+      // Keep the word being spoken near the middle of the box, like synced lyrics.
+      // If she scrolls by hand, leave it alone for a few seconds.
+      if (k && Date.now() - touched > 3000) {
+        const top = Math.max(0, cur.offsetTop - box.clientHeight * .45);
+        if (Math.abs(top - box.scrollTop) > 20) box.scrollTo({ top, behavior: 'smooth' });
+      }
     };
+    const box = paper.querySelector('.transcript'), cur = paper.querySelector('.cur');
+    let touched = 0;
+    ['wheel', 'touchmove'].forEach(ev => box.addEventListener(ev, () => { touched = Date.now(); }, { passive: true }));
     vAudio.ontimeupdate = update; vAudio.onplay = update; vAudio.onpause = update; vAudio.onloadedmetadata = update;
     btn.addEventListener('click', () => vAudio.paused ? vAudio.play() : vAudio.pause());
     seek.addEventListener('click', e => {
