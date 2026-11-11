@@ -27,7 +27,7 @@
     const ratio = current.landscape ? 1754 / 1241 : 1241 / 1754;
     flip.style.aspectRatio = String(ratio);
     flip.style.width = zoomedOut ? `min(94vw, calc((100vh - 80px) * ${ratio}))`
-      : current.landscape ? 'min(94vw, 1200px)' : 'min(94vw, 760px)';
+      : current.landscape ? 'min(94vw, 1500px)' : 'min(94vw, 1050px)';
     zoom.textContent = zoomedOut ? '+ Zoom in' : '− Zoom out';
     zoom.setAttribute('aria-pressed', zoomedOut);
     flip.style.height = 'auto';
