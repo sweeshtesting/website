@@ -363,9 +363,9 @@ body.dark-page { background: #10172f; }
 .note-paper .qty { position: absolute; top: 18px; right: 22px; font-family: var(--pixel); font-size: 16px; letter-spacing: 1px; color: var(--ink); opacity: .6; }
 .note-paper .tomato { width: 280px; max-width: 70%; margin: 30px auto 10px; animation: bounce 1.2s ease-in-out infinite; }
 @keyframes bounce { 50% { transform: translateY(-10px) rotate(4deg); } }
-.note-paper .transcript { font-family: var(--mc); font-size: 16px; line-height: 24px; max-width: 548px; margin: 30px 0; color: var(--ink); }
+.note-paper .transcript { white-space: pre-line; font-family: var(--mc); font-size: 16px; line-height: 24px; max-width: 548px; margin: 30px 0; color: var(--ink); }
 .note-paper .transcript .later { color: rgba(27, 28, 25, .38); transition: color .3s; }
-.note-paper .vn { width: 100%; max-width: 458px; margin-top: auto; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.note-paper .vn { width: 100%; max-width: 458px; margin-top: auto; display: flex; flex-direction: column; align-items: center; gap: 14px; position: sticky; bottom: calc(-1 * var(--pb, 50px)); background: var(--cream); padding: 12px 0 calc(var(--pb, 50px) + 4px); margin-bottom: calc(-1 * var(--pb, 50px)); box-shadow: 0 -14px 14px -6px var(--cream); }
 .note-paper .vn .seek { width: 100%; }
 .note-modal .counter { font-family: var(--pixel); font-size: 24px; letter-spacing: 2.52px; color: #fff; }
 .note-modal .prev { left: calc(50% - 388px); top: 50%; transform: translateY(-50%); }
@@ -585,7 +585,7 @@ body.dark-page { background: #10172f; }
   .note-modal .prev, .note-modal .next { top: auto; bottom: 18px; transform: none; width: 46px; height: 50px; }
   .note-modal .prev { left: 16px; } .note-modal .next { right: 16px; }
   .note-modal .close { right: 16px; top: 16px; transform: none; font-size: 36px; }
-  .note-paper { padding: 36px 22px; min-height: 0; }
+  .note-paper { padding: 36px 22px; --pb: 36px; min-height: 0; }
 
   .farm { grid-template-columns: 1fr; padding: 40px 16px; gap: 30px; }
   .seeds h2 { font-size: 32px; line-height: 40px; }
