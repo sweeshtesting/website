@@ -154,7 +154,7 @@
     } else if (it.voice) {
       const v = it.voice;
       paper.innerHTML = `<div class="stars">${stars}</div>
-        <p class="transcript"><span class="said"></span><span class="cur"></span><span class="later">${esc(v.transcript || '')}</span></p>
+        <p class="transcript">${(v.transcript || '').split(/(\s+)/).map((w, i) => i % 2 ? w : w && `<span class="w">${esc(w)}</span>`).join('')}</p>
         <div class="vn">
           <div class="seek"><div class="track"></div><div class="fill"></div><span class="t0">0:00</span><span class="t1">0:00</span></div>
           <button class="play-btn" aria-label="Play voice note" ${v.src ? '' : 'disabled style="opacity:.4"'}></button>
@@ -184,29 +184,43 @@
   const fmt = s => isFinite(s) ? `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}` : '0:00';
   function setupVoice(v) {
     const btn = paper.querySelector('.play-btn'), seek = paper.querySelector('.seek'), fill = seek.querySelector('.fill');
-    const said = paper.querySelector('.said'), later = paper.querySelector('.later');
-    const words = (v.transcript || '').split(/(\s+)/);
+    const box = paper.querySelector('.transcript'), words = [...box.querySelectorAll('.w')];
     if (!v.src) return;
     vAudio.src = v.src;
-    const update = () => {
-      const p = vAudio.currentTime / vAudio.duration || 0;
-      fill.style.width = p * 100 + '%';
-      seek.querySelector('.t0').textContent = fmt(vAudio.currentTime);
-      seek.querySelector('.t1').textContent = fmt(vAudio.duration);
-      const k = Math.round(words.length * p);
-      said.textContent = words.slice(0, k).join(''); later.textContent = words.slice(k).join('');
-      btn.classList.toggle('on', !vAudio.paused);
-      // Keep the word being spoken near the middle of the box, like synced lyrics.
-      // If she scrolls by hand, leave it alone for a few seconds.
-      if (k && Date.now() - touched > 3000) {
-        const top = Math.max(0, cur.offsetTop - box.clientHeight * .45);
-        if (Math.abs(top - box.scrollTop) > 20) box.scrollTo({ top, behavior: 'smooth' });
-      }
+    // Start time of each word. Falls back to spreading the words evenly if there are no timings.
+    const times = v.times && v.times.length === words.length ? v.times : null;
+    let lit = 0, lineTop = -1, raf = 0;
+    const litAt = t => {
+      if (!times) return Math.round(words.length * (t / vAudio.duration || 0));
+      let n = 0; while (n < times.length && times[n] <= t + .08) n++; return n;
     };
-    const box = paper.querySelector('.transcript'), cur = paper.querySelector('.cur');
-    let touched = 0;
-    ['wheel', 'touchmove'].forEach(ev => box.addEventListener(ev, () => { touched = Date.now(); }, { passive: true }));
-    vAudio.ontimeupdate = update; vAudio.onplay = update; vAudio.onpause = update; vAudio.onloadedmetadata = update;
+    const paint = () => {
+      const t = vAudio.currentTime;
+      fill.style.width = (t / vAudio.duration || 0) * 100 + '%';
+      seek.querySelector('.t0').textContent = fmt(t);
+      seek.querySelector('.t1').textContent = fmt(vAudio.duration);
+      const n = litAt(t);
+      if (n !== lit) {
+        const [lo, hi] = n > lit ? [lit, n] : [n, lit];
+        for (let k = lo; k < hi; k++) words[k].classList.toggle('on', n > lit);
+        if (words[lit - 1]) words[lit - 1].classList.remove('now');
+        lit = n;
+        const cur = words[Math.max(0, lit - 1)];
+        if (lit) cur.classList.add('now');
+        // Like synced lyrics: when speech moves to a new line, glide that line to the middle of the box.
+        if (cur && cur.offsetTop !== lineTop) {
+          lineTop = cur.offsetTop;
+          box.scrollTo({ top: Math.max(0, lineTop - box.clientHeight * .4), behavior: 'smooth' });
+        }
+      }
+      btn.classList.toggle('on', !vAudio.paused);
+      // The box can't be scrolled by hand while the voice note is playing.
+      box.classList.toggle('locked', !vAudio.paused && !vAudio.ended);
+    };
+    const loop = () => { paint(); if (!vAudio.paused) raf = requestAnimationFrame(loop); };
+    vAudio.onplay = () => { cancelAnimationFrame(raf); loop(); };
+    vAudio.onpause = vAudio.onended = vAudio.onseeked = vAudio.onloadedmetadata = paint;
+    vAudio.ontimeupdate = null;
     btn.addEventListener('click', () => vAudio.paused ? vAudio.play() : vAudio.pause());
     seek.addEventListener('click', e => {
       const r = seek.getBoundingClientRect();
