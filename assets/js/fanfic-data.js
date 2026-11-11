@@ -5,15 +5,18 @@
    - summary: short blurb on the list.  about: longer description shown when the fic is opened. */
 window.FANFICS = [
   {
-    title: 'Placeholder: MHA fic title',
-    author: 'author name',
-    fandom: 'My Hero Academia',
-    rating: 'T',
+    title: 'Fuyumi Goes to Dinner',
+    author: 'S_C_G',
+    fandom: '僕のヒーローアカデミア | Boku no Hero Academia | My Hero Academia',
+    rating: 'G',
+    category: 'Gen',
+    warning: 'none',
     complete: true,
-    tags: ['Placeholder tag', 'Fluff', 'Slow burn'],
-    summary: 'Placeholder summary. Replace this with the fic’s real summary.',
-    words: '—', chapters: '—', kudos: '—',
-    url: ''
+    tags: ['No Archive Warnings Apply', 'Dabi | Todoroki Touya & Todoroki Fuyumi', 'Dabi | Todoroki Touya & League of Villains', 'League of Villains & Todoroki Fuyumi', 'Todoroki Fuyumi', 'Dabi | Todoroki Touya', 'Shigaraki Tomura | Shimura Tenko', 'Eri [My Hero Academia]', 'Toga Himiko', 'Kurogiri [My Hero Academia]', 'League of Villains [My Hero Academia]', 'Good Sibling Todoroki Fuyumi', 'League of Villains as Family', 'Family Dinners', 'Awkward Conversations', 'Todoroki Family Feels [My Hero Academia]', 'Todoroki Fuyumi Tries', 'Dabi | Todoroki Touya Tries', 'Alternate Universe - Canon Divergence', 'League of Villains Adopts Eri [My Hero Academia]', 'Dabi | Todoroki Touya is a Mess', 'Sibling Bonding', 'Todoroki Enji | Endeavor’s Bad Parenting', 'POV Todoroki Fuyumi'],
+    summary: 'Fuyumi wants her brother Touya back in her life, and these days Touya comes as a package deal with the whole League of Villains.',
+    about: 'When Fuyumi said she wanted her brother in her life, she meant it. The catch? These days Touya, better known as Dabi, is a bit of a package deal.\n\nTold from Fuyumi’s point of view, this canon-divergent AU sends her to a family dinner with Touya and the League of Villains, who have become a found family of their own (and have adopted Eri along the way). Shigaraki, Toga and Kurogiri all appear.\n\nExpect awkward conversations, a good big sister doing her best, a brother who is a bit of a mess but trying too, and plenty of sibling bonding and Todoroki family feels. It is a short, sweet one-shot of about 1,750 words, and part 14 of the series “Toga Steals Children, Eri Steals Hearts”.',
+    words: '1,757', chapters: '1/1', kudos: '22',
+    url: 'https://squidgeworld.org/works/67050'
   },
   {
     title: 'Placeholder: Haikyuu fic title',
