@@ -4,7 +4,7 @@
   /* ---------- Genshin-style odds ----------
      5★: 0.6% base. From pull 74 the chance rises by 6% per pull; pull 90 is guaranteed.
      4★: 5.1% base. Pull 9 since the last 4★ is 56.1%; pull 10 is guaranteed.
-     50/50: a 5★ is either a voice note or a tomato. After a tomato, the next 5★ is always a voice note. */
+     50/50: a 5★ is either a voice note or a loss (tomato or rickroll). After a loss, the next 5★ is always a voice note. */
   function chance5(n) { return n >= 90 ? 1 : n < 74 ? 0.006 : Math.min(1, 0.006 + 0.06 * (n - 73)); }
   function chance4(n) { return n >= 10 ? 1 : n === 9 ? 0.561 : 0.051; }
 
@@ -16,7 +16,10 @@
     4: D.FOUR_STAR.map((text, i) => ({ id: `4-${i}`, rarity: 4, n: i + 1, text })),
     5: D.VOICE_NOTES.map((v, i) => ({ id: `5-${i}`, rarity: 5, n: i + 1, voice: v }))
   };
-  const TOMATO = { id: 'tomato', rarity: 5, tomato: true };
+  // 50/50 losses. Older saves counted tomatoes separately; move that count into `owned`.
+  const FAILS = D.FAILS.map(f => ({ id: f.id, rarity: 5, fail: f }));
+  if (state.tomatoes && !state.owned.tomato) state.owned.tomato = state.tomatoes;
+  delete state.tomatoes;
 
   function pick(list) {
     // Prefer rewards you don't have yet, so the collection fills up.
@@ -33,14 +36,13 @@
     if (r < chance5(n5)) {
       state.pity5 = 0; state.pity4 = n4;
       if (state.guaranteed || Math.random() < 0.5) { state.guaranteed = false; item = pick(pool[5]); }
-      else { state.guaranteed = true; item = TOMATO; }
+      else { state.guaranteed = true; item = pick(FAILS); }
     } else if (Math.random() < chance4(n4)) {
       state.pity5 = n5; state.pity4 = 0; item = pick(pool[4]);
     } else {
       state.pity5 = n5; state.pity4 = n4; item = pick(pool[3]);
     }
-    if (item.tomato) state.tomatoes++;
-    else state.owned[item.id] = (state.owned[item.id] || 0) + 1;
+    state.owned[item.id] = (state.owned[item.id] || 0) + 1;
     return item;
   }
 
@@ -95,7 +97,7 @@
   const PER_PAGE = 12;
   function invItems() {
     const list = pool[tier].slice();
-    if (tier === 5 && state.tomatoes) list.push(TOMATO);
+    if (tier === 5) list.push(...FAILS);
     return list;
   }
   function renderInventory() {
@@ -105,8 +107,8 @@
     page = Math.min(page, pages - 1);
     const slice = list.slice(page * PER_PAGE, (page + 1) * PER_PAGE);
     $('#inv-grid').innerHTML = slice.map(it => {
-      const have = it.tomato ? state.tomatoes : state.owned[it.id];
-      const name = it.tomato ? `Tomato x${state.tomatoes}` : have ? `${it.rarity === 5 ? 'Voice note' : 'Note'} #${it.n} x${have}` : 'Not unlocked';
+      const have = state.owned[it.id];
+      const name = !have ? 'Not unlocked' : it.fail ? `${it.fail.name} x${have}` : `${it.rarity === 5 ? 'Voice note' : 'Note'} #${it.n} x${have}`;
       return `<div class="inv-cell"><button class="card r${it.rarity}${have ? '' : ' locked'}" data-id="${it.id}" ${have ? '' : 'disabled'} aria-label="${name}"><span class="star">${star}</span></button><span class="cell-label">${name}</span></div>`;
     }).join('');
     $('#inv-page').textContent = `${page + 1} / ${pages}`;
@@ -123,7 +125,7 @@
   $('#inv-next').addEventListener('click', () => { page++; renderInventory(); });
   $('#inv-grid').addEventListener('click', e => {
     const c = e.target.closest('.card:not(.locked)'); if (!c) return;
-    const owned = invItems().filter(it => it.tomato ? state.tomatoes : state.owned[it.id]);
+    const owned = invItems().filter(it => state.owned[it.id]);
     openNotes(owned, owned.findIndex(it => it.id === c.dataset.id));
   });
 
@@ -149,8 +151,11 @@
     paper.className = `note-paper r${it.rarity}`;
     void paper.offsetWidth; paper.classList.add('pop');
     const stars = star.repeat(it.rarity);
-    if (it.tomato) {
-      paper.innerHTML = `<div class="stars">${stars}</div><img class="tomato" src="assets/img/tomato.png" alt="A tomato"><div class="quote">${esc(D.TOMATO_TEXT)}</div>`;
+    if (it.fail) {
+      const f = it.fail;
+      paper.innerHTML = `<div class="stars">${stars}</div><img class="tomato" src="${esc(f.img)}" alt="${esc(f.alt || f.name)}"><div class="quote">${esc(f.text)}</div>`;
+      // Some losses come with a song that loops until the note is closed.
+      if (f.audio) { vAudio.src = f.audio; vAudio.loop = true; vAudio.onplay = vAudio.onpause = vAudio.onended = vAudio.onseeked = vAudio.onloadedmetadata = null; vAudio.play().catch(() => {}); }
     } else if (it.voice) {
       const v = it.voice;
       paper.innerHTML = `<div class="stars">${stars}</div>
@@ -165,7 +170,7 @@
       const long = it.text.length > 120;
       paper.innerHTML = `<div class="stars">${stars}</div><div class="quote${long ? ' long' : ''}">“${esc(it.text)}”</div>`;
     }
-    const count = it.tomato ? state.tomatoes : state.owned[it.id] || 0;
+    const count = state.owned[it.id] || 0;
     if (count) paper.insertAdjacentHTML('beforeend', `<span class="qty">x${count}</span>`);
     fitText();
     counter.textContent = `${at + 1}/${notes.length}`;
@@ -186,7 +191,7 @@
     const btn = paper.querySelector('.play-btn'), seek = paper.querySelector('.seek'), fill = seek.querySelector('.fill');
     const box = paper.querySelector('.transcript'), words = [...box.querySelectorAll('.w')];
     if (!v.src) return;
-    vAudio.src = v.src;
+    vAudio.src = v.src; vAudio.loop = false;
     // Start time of each word. Falls back to spreading the words evenly if there are no timings.
     const times = v.times && v.times.length === words.length ? v.times : null;
     let lit = 0, lineTop = -1, raf = 0;

@@ -83,6 +83,10 @@ window.GACHA_DATA = {
     }
   ],
 
-  // What you get when you lose the 50/50.
-  TOMATO_TEXT: 'Sucks to suck!'
+  // What you can get when you lose the 50/50 (one is picked at random).
+  // `audio` is optional: it loops while the note is open.
+  FAILS: [
+    { id: 'tomato', name: 'Tomato', img: 'assets/img/tomato.png', alt: 'A tomato', text: 'Sucks to suck!' },
+    { id: 'rickroll', name: 'Rickroll', img: 'assets/img/rickroll.webp', alt: 'Sparkle giving a thumbs up', text: 'Get rick-rolled loser.', audio: 'assets/audio/rickroll.mp3' }
+  ]
 };
