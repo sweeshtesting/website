@@ -4,15 +4,26 @@
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const paras = t => String(t).split(/\n\s*\n/).map(p => `<p>${esc(p.trim())}</p>`).join('');
 
+  /* AO3-style square: rating, category / warnings, status. */
+  const RATING = { G: 'g', T: 't', M: 'm', E: 'e' };
+  const CATEGORY = { 'M/M': ['mm', '♂'], 'F/F': ['ff', '♀'], 'F/M': ['fm', '⚥'], Gen: ['gen', '○'], Multi: ['multi', '⚥'], Other: ['other', '?'] };
+  const WARNING = { none: ['none', ''], warnings: ['yes', '!'], chose: ['chose', '?'] };
+  function badges(f) {
+    const [cc, cs] = CATEGORY[f.category] || ['none', ''];
+    const [wc, ws] = WARNING[f.warning] || WARNING.none;
+    return `<div class="badges" aria-label="Rated ${esc(f.rating || '?')}, ${esc(f.category || 'no category')}, ${f.complete ? 'complete' : 'in progress'}">
+        <span class="b-r-${RATING[f.rating] || 'none'}">${esc(f.rating || '')}</span>
+        <span class="b-c-${cc}">${cs}</span>
+        <span class="b-w-${wc}">${ws}</span>
+        <span class="b-s-${f.complete ? 'done' : 'wip'}">${f.complete ? '✓' : '…'}</span>
+      </div>`;
+  }
+
   /* ---------- Works list ---------- */
   $('#works-count').textContent = `${FICS.length} found`;
   $('#works').innerHTML = FICS.map((f, i) => `
     <article class="work">
-      <div class="badges" aria-hidden="true">
-        <span class="b-${f.rating === 'G' ? 'g' : 't'}">${esc(f.rating || 'T')}</span>
-        <span class="b-h">♥</span>
-        <span class="b-c">${f.complete ? '✓' : '…'}</span>
-      </div>
+      ${badges(f)}
       <div>
         <h3><button data-i="${i}">${esc(f.title)}</button></h3>
         <div class="by">by <b>${esc(f.author)}</b></div>
@@ -36,7 +47,7 @@
     const f = FICS[i];
     const cover = `<h2>${esc(f.title)}</h2>
       <div class="meta">by ${esc(f.author)} · ${esc(f.fandom)} · Rated ${esc(f.rating)}</div>
-      ${paras(f.summary)}
+      ${paras(f.about || f.summary)}
       ${f.url ? `<a class="btn read" href="${esc(f.url)}" target="_blank" rel="noopener">Read it ↗</a>` : ''}`;
     const body = (f.pages || []).map(p => paras(p));
     pages = [cover, ...body];
