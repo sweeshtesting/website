@@ -1,6 +1,6 @@
-/* Fanfic list. Entries named "Placeholder" still need real details.
+/* Fanfic list.
    - url:   link to the fic on another site (shows a "Read it" button). Leave '' if none.
-   - rating: 'G', 'T', 'M' or 'E'.  complete: true / false.
+   - rating: 'G', 'T', 'M', 'E' or 'Not Rated'.  complete: true / false.
    - category: 'M/M', 'F/F', 'F/M', 'Gen', 'Multi' or 'Other'.  warning: 'none', 'warnings' or 'chose'.
    - summary: short blurb on the list.  about: longer description shown when the fic is opened. */
 window.FANFICS = [
@@ -19,15 +19,18 @@ window.FANFICS = [
     url: 'https://squidgeworld.org/works/67050'
   },
   {
-    title: 'Placeholder: Haikyuu fic title',
-    author: 'author name',
+    title: 'Eclipse',
+    author: 'Qem',
     fandom: 'Haikyuu!!',
-    rating: 'T',
+    rating: 'Not Rated',
+    category: 'M/M',
+    warning: 'none',
     complete: true,
-    tags: ['Placeholder tag', 'Volleyball', 'Found family'],
-    summary: 'Placeholder summary. Replace this with the fic’s real summary.',
-    words: '—', chapters: '—', kudos: '—',
-    url: ''
+    tags: ['No Archive Warnings Apply', 'Hinata Shouyou/Tsukishima Kei', 'Hinata Shouyou & Kageyama Tobio', 'Tsukishima Kei', 'Fluff', 'or at least Tsukishima’s version of fluff', 'Happy Ending'],
+    summary: 'Tsukishima Kei comes to a horrible realization: he may, just possibly, like Hinata.',
+    about: 'Tsukishima Kei finds himself coming to a horrible realization. He may, just possibly, like Hinata.\n\nTold from Tsukishima’s side, this is a short Hinata/Tsukishima story about the salty middle blocker slowly (and very reluctantly) admitting that the loud, sunny ball of energy has gotten under his skin, with Hinata’s partnership with Kageyama never far from view.\n\nIt’s fluff, or at least Tsukishima’s version of fluff, with a happy ending. A quick one-shot of about 1,600 words.',
+    words: '1,611', chapters: '1/1', kudos: '24',
+    url: 'https://squidgeworld.org/works/37119'
   },
   {
     title: 'Never Learn (It’s Pointless)',

@@ -12,7 +12,7 @@
     const [cc, cs] = CATEGORY[f.category] || ['none', ''];
     const [wc, ws] = WARNING[f.warning] || WARNING.none;
     return `<div class="badges" aria-label="Rated ${esc(f.rating || '?')}, ${esc(f.category || 'no category')}, ${f.complete ? 'complete' : 'in progress'}">
-        <span class="b-r-${RATING[f.rating] || 'none'}">${esc(f.rating || '')}</span>
+        <span class="b-r-${RATING[f.rating] || 'none'}">${RATING[f.rating] ? esc(f.rating) : ''}</span>
         <span class="b-c-${cc}">${cs}</span>
         <span class="b-w-${wc}">${ws}</span>
         <span class="b-s-${f.complete ? 'done' : 'wip'}">${f.complete ? '✓' : '…'}</span>
@@ -45,7 +45,7 @@
     const f = FICS[i];
     book.innerHTML = `<div class="page">
       <h2>${esc(f.title)}</h2>
-      <div class="meta">by ${esc(f.author)} · ${esc(f.fandom)} · Rated ${esc(f.rating)}</div>
+      <div class="meta">by ${esc(f.author)} · ${esc(f.fandom)} · ${RATING[f.rating] ? 'Rated ' + esc(f.rating) : esc(f.rating || 'Not Rated')}</div>
       ${paras(f.about || f.summary)}
       ${f.url ? `<a class="btn read" href="${esc(f.url)}" target="_blank" rel="noopener">Read it ↗</a>` : ''}</div>`;
     reader.classList.add('open');
