@@ -4,7 +4,8 @@
     { n: 2, title: 'A world full of colour', landscape: false },
     { n: 3, title: 'Everlasting flower', landscape: true },
     { n: 4, title: 'Distance', landscape: false },
-    { n: 5, title: 'Welcome back', landscape: true }
+    { n: 5, title: 'Welcome back', landscape: true },
+    { n: 6, title: 'My Star', landscape: true }
   ];
   const grid = document.getElementById('letters');
   grid.innerHTML = LETTERS.map((l, i) => `
